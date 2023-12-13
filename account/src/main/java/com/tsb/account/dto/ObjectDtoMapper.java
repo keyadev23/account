@@ -17,14 +17,11 @@ public class ObjectDtoMapper {
     private static final Logger log = LogManager.getLogger(ObjectDtoMapper.class);
     private static ModelMapper modelMapper;
 
-    private ObjectDtoMapper() {
-    }
-
     @Autowired
-    public static void setModelMapper(ModelMapper modelMapper) {
-
+    private ObjectDtoMapper(ModelMapper modelMapper) {
         ObjectDtoMapper.modelMapper = modelMapper;
     }
+
 
     public static <T> T dtoMapper(Object object, Class<T> type) {
         String json = JsonUtil.toJson(object);
@@ -33,10 +30,8 @@ public class ObjectDtoMapper {
             return JsonUtil.toObject(json, type);
         } catch (Exception ex) {
             log.info("Error in ObjectDtoMapper class in method dtoMapper: {}", ex.getMessage());
-            //  throw new CustomException("451", "Something went wrong");
+            throw new CustomException("451", "Something went wrong");
         }
-
-        return null;
     }
 
     public static <S, T> List<T> listMapper(List<S> source, Class<T> targetClass) {

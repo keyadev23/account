@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class MapperConfig {
 
     @Bean
-    public static ModelMapper modelMapper() {
+    public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration()
                 .setFieldMatchingEnabled(true)
@@ -19,7 +19,7 @@ public class MapperConfig {
     }
 
     @Bean
-    public static ObjectMapper objectMapper() {
+    public ObjectMapper objectMapper() {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
         return objectMapper;

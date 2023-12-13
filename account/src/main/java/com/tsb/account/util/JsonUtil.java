@@ -25,8 +25,8 @@ public class JsonUtil {
         try {
             setObjectMapper(new ObjectMapper());
             return objectMapper.writeValueAsString(object);
-        } catch (Throwable throwable) {
-            log.info("Error in JsonUtil class in method toJson: {}", throwable.getMessage());
+        } catch (Exception ex) {
+            log.info("Error in JsonUtil class in method toJson: {}", ex.getMessage());
             throw new CustomException("451", "Something went wrong");
         }
     }
@@ -34,8 +34,8 @@ public class JsonUtil {
     public static <T> List<T> toObjectOfList(String json, TypeReference<List<T>> type) {
         try {
             return objectMapper.readValue(json, type);
-        } catch (Throwable throwable) {
-            log.info("Error in JsonUtil class in method toObject: {}", throwable.getMessage());
+        } catch (Exception ex) {
+            log.info("Error in JsonUtil class in method toObject: {}", ex.getMessage());
             throw new CustomException("451", "Something went wrong");
         }
 
@@ -45,8 +45,8 @@ public class JsonUtil {
     public static <T> T toObject(String json, Class<T> type) {
         try {
             return objectMapper.readValue(json, type);
-        } catch (Throwable throwable) {
-            log.info("Error in JsonUtil class in method toObject: {}", throwable.getMessage());
+        } catch (Exception ex) {
+            log.info("Error in JsonUtil class in method toObject: {}", ex.getMessage());
             throw new CustomException("451", "Something went wrong");
         }
 

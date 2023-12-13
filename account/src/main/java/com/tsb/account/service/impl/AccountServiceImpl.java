@@ -2,8 +2,10 @@ package com.tsb.account.service.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 
+import com.tsb.account.dto.accountdto.AccountResponseDto;
 import com.tsb.account.exception.CustomException;
 import com.tsb.account.model.response.account.AccountResponse;
+
 import com.tsb.account.service.AccountService;
 import com.tsb.account.service.AuthService;
 import com.tsb.account.util.HeadersUtil;
@@ -22,6 +24,7 @@ import reactor.util.retry.Retry;
 
 import java.time.Duration;
 import java.util.List;
+import com.tsb.account.dto.accountdto.Data;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -44,11 +47,11 @@ public class AccountServiceImpl implements AccountService {
 
 
     @Override
-    public Flux<AccountResponse> getAccounts(
-            String authDate,
-            String customerIpAddress,
-            String interactionId,
-            String accept) {
+    public Flux<AccountResponseDto> getAccountsById(String authDate,
+                                                    String customerIpAddress,
+                                                    String interactionId,
+                                                    String accept,
+                                                    String accountId) {
 
         return authService
                 .getToken()
@@ -59,7 +62,8 @@ public class AccountServiceImpl implements AccountService {
                     httpHeaders.set("x-fapi-interaction-id", interactionId);
                     httpHeaders.set("Accept", accept);
                     UriComponentsBuilder componentsBuilder = UriComponentsBuilder
-                            .fromHttpUrl(gatewayUrl);
+                            .fromHttpUrl(gatewayUrl)
+                            .path(accountId);
 
                     logger.info("Accounts Request: {} headers: {}",
                             componentsBuilder.toUriString(),
@@ -78,7 +82,7 @@ public class AccountServiceImpl implements AccountService {
                             .bodyToMono(String.class)
                             .map(response -> {
                                 logger.info("Accounts Response: {}", response);
-                                return JsonUtil.toObjectOfList(response, new TypeReference<List<AccountResponse>>() {
+                                return JsonUtil.toObjectOfList(response, new TypeReference<List<AccountResponseDto>>() {
                                 });
                             })
                             .retryWhen(Retry.fixedDelay(maxAttempt, Duration.ofMillis(delayMillis)))

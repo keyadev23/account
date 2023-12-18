@@ -10,6 +10,6 @@ import lombok.Builder;
         content = JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record AccountResponse(
-        @JsonProperty("CurrentAccountFacility") CurrentAccountFacility currentAccountFacility
+        @JsonProperty("Data") Data data
 ) {
 }

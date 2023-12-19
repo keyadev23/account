@@ -2,7 +2,6 @@ package com.tsb.account.dto;
 
 import com.tsb.account.dto.accountdto.AccountResponseDto;
 import com.tsb.account.model.response.account.AccountResponse;
-import com.tsb.account.model.response.account.CurrentAccountFacility;
 import com.tsb.account.model.response.account.Data;
 import com.tsb.account.util.JsonUtil;
 import org.junit.jupiter.api.AfterEach;
@@ -19,8 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 @ExtendWith(MockitoExtension.class)
 class ObjectDtoMapperTest {
@@ -42,22 +40,22 @@ class ObjectDtoMapperTest {
     }
 
     @Test
-    void dtoMapper(){
+    void dtoMapper() {
         AccountResponseDto respObj = new AccountResponseDto();
-        AccountResponse accountObj= new AccountResponse(Data.builder().build());
-        try(MockedStatic<JsonUtil> utilities = Mockito.mockStatic(JsonUtil.class)){
-           utilities.when(() -> JsonUtil.toObject(JsonUtil.toJson(accountObj), AccountResponseDto.class)).thenReturn(respObj);
+        AccountResponse accountObj = new AccountResponse(Data.builder().build());
+        try (MockedStatic<JsonUtil> utilities = Mockito.mockStatic(JsonUtil.class)) {
+            utilities.when(() -> JsonUtil.toObject(JsonUtil.toJson(accountObj), AccountResponseDto.class)).thenReturn(respObj);
         }
-        assertInstanceOf(AccountResponseDto.class,JsonUtil.toObject(JsonUtil.toJson(accountObj), AccountResponseDto.class));
+        assertInstanceOf(AccountResponseDto.class, JsonUtil.toObject(JsonUtil.toJson(accountObj), AccountResponseDto.class));
 
     }
 
     @Test
     void listMapper() {
         List<AccountResponseDto> respObj = new ArrayList<>();
-        AccountResponse accountObj= new AccountResponse(Data.builder().build());
+        AccountResponse accountObj = new AccountResponse(Data.builder().build());
         List<AccountResponse> accountObjList = Arrays.asList(accountObj);
-        respObj=accountObjList.stream()
+        respObj = accountObjList.stream()
                 .map(e -> modelMapper.map(e, AccountResponseDto.class)).toList();
 
         assertInstanceOf(AccountResponseDto.class, respObj.get(0));
@@ -66,23 +64,24 @@ class ObjectDtoMapperTest {
     }
 
     @Test
-    void dtoMapper_test() throws Exception{
+    void dtoMapper_test() throws Exception {
         AccountResponseDto respObj = new AccountResponseDto();
-        AccountResponse accountObj= new AccountResponse(Data.builder().build());
-        try(MockedStatic<ObjectDtoMapper> utilities = Mockito.mockStatic(ObjectDtoMapper.class)){
+        AccountResponse accountObj = new AccountResponse(Data.builder().build());
+        try (MockedStatic<ObjectDtoMapper> utilities = Mockito.mockStatic(ObjectDtoMapper.class)) {
             utilities.when(() -> ObjectDtoMapper.dtoMapper(JsonUtil.toJson(accountObj), AccountResponseDto.class)).thenReturn(respObj);
-            assertInstanceOf(AccountResponseDto.class,ObjectDtoMapper.dtoMapper(JsonUtil.toJson(accountObj), AccountResponseDto.class));
+            assertInstanceOf(AccountResponseDto.class, ObjectDtoMapper.dtoMapper(JsonUtil.toJson(accountObj), AccountResponseDto.class));
         }
 
 
     }
+
     @Test
     void listMapper_test() {
         List<AccountResponseDto> respObj = new ArrayList<>();
-        AccountResponse accountObj= new AccountResponse(Data.builder().build());
+        AccountResponse accountObj = new AccountResponse(Data.builder().build());
         List<AccountResponse> accountObjList = Arrays.asList(accountObj);
-        try(MockedStatic<ObjectDtoMapper> utilities = Mockito.mockStatic(ObjectDtoMapper.class)) {
-            utilities.when(() ->ObjectDtoMapper.listMapper(accountObjList, AccountResponseDto.class)).thenReturn(respObj);
+        try (MockedStatic<ObjectDtoMapper> utilities = Mockito.mockStatic(ObjectDtoMapper.class)) {
+            utilities.when(() -> ObjectDtoMapper.listMapper(accountObjList, AccountResponseDto.class)).thenReturn(respObj);
 
         }
 

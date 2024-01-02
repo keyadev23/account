@@ -1,0 +1,1936 @@
+[
+  {
+    "ProductInstanceReference": {
+      "CurrentAccountAgreement": "string"
+    },
+    "CurrentAccountNumber": {
+      "AccountIdentificationType": "BBAN",
+      "AccountIdentification": {
+        "IdentifierValue": {
+          "Value": "31820"
+        },
+        "IdentifierIssuingAuthority": {
+          "PartyReference": {
+            "PartyName": {
+              "Name": "string"
+            },
+            "PartyType": "Person",
+            "PartyDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "PartyIdentification": {
+              "PartyIdentificationType": "Taxidentificationnumber",
+              "PartyIdentification": "string"
+            },
+            "PartyLegalStructureType": "Individual"
+          },
+          "PartyInvolvement": {
+            "PartyRoleType": {
+              "Text": "string"
+            },
+            "PartyRoleName": {
+              "Name": "string"
+            },
+            "PartyRoleValidityPeriod": {
+              "FromDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "ToDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              }
+            },
+            "PartyInvolvementType": "Agreementinvolvement"
+          }
+        },
+        "IdentifierStartDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "IdentifierEndDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      }
+    },
+    "CustomerReference": {
+      "PartyReference": {
+        "PartyName": {
+          "Name": "string"
+        },
+        "PartyType": "Person",
+        "PartyDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "PartyIdentification": {
+          "PartyIdentificationType": "Taxidentificationnumber",
+          "PartyIdentification": "string"
+        },
+        "PartyLegalStructureType": "Individual"
+      },
+      "PartyInvolvement": {
+        "PartyRoleType": {
+          "Text": "string"
+        },
+        "PartyRoleName": {
+          "Name": "string"
+        },
+        "PartyRoleValidityPeriod": {
+          "FromDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "ToDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          }
+        },
+        "PartyInvolvementType": "Agreementinvolvement"
+      }
+    },
+    "BankBranchLocationReference": {
+      "BranchIdentification": {
+        "IdentifierValue": {
+          "Value": "string"
+        },
+        "IdentifierIssuingAuthority": {
+          "PartyReference": {
+            "PartyName": {
+              "Name": "string"
+            },
+            "PartyType": "Person",
+            "PartyDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "PartyIdentification": {
+              "PartyIdentificationType": "Taxidentificationnumber",
+              "PartyIdentification": "string"
+            },
+            "PartyLegalStructureType": "Individual"
+          },
+          "PartyInvolvement": {
+            "PartyRoleType": {
+              "Text": "string"
+            },
+            "PartyRoleName": {
+              "Name": "string"
+            },
+            "PartyRoleValidityPeriod": {
+              "FromDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "ToDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              }
+            },
+            "PartyInvolvementType": "Agreementinvolvement"
+          }
+        },
+        "IdentifierStartDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "IdentifierEndDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "BranchLegalEntityIdentification": {
+        "IdentifierValue": {
+          "Value": "string"
+        },
+        "IdentifierIssuingAuthority": {
+          "PartyReference": {
+            "PartyName": {
+              "Name": "string"
+            },
+            "PartyType": "Person",
+            "PartyDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "PartyIdentification": {
+              "PartyIdentificationType": "Taxidentificationnumber",
+              "PartyIdentification": "string"
+            },
+            "PartyLegalStructureType": "Individual"
+          },
+          "PartyInvolvement": {
+            "PartyRoleType": {
+              "Text": "string"
+            },
+            "PartyRoleName": {
+              "Name": "string"
+            },
+            "PartyRoleValidityPeriod": {
+              "FromDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "ToDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              }
+            },
+            "PartyInvolvementType": "Agreementinvolvement"
+          }
+        },
+        "IdentifierStartDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "IdentifierEndDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "BranchAddress": {
+        "AddressType": "PostalAddress",
+        "LocationReference": {
+          "LocationDescription": {
+            "Text": "string"
+          },
+          "LocationDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "LocationStatus": {
+            "StatusReason": {
+              "Text": "string"
+            },
+            "StatusDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "StatusValidityPeriod": {
+              "FromDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "ToDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              }
+            },
+            "StatusInvolvedParty": {
+              "PartyReference": {
+                "PartyName": {
+                  "Name": "string"
+                },
+                "PartyType": "Person",
+                "PartyDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "PartyIdentification": {
+                  "PartyIdentificationType": "Taxidentificationnumber",
+                  "PartyIdentification": "string"
+                },
+                "PartyLegalStructureType": "Individual"
+              },
+              "PartyInvolvement": {
+                "PartyRoleType": {
+                  "Text": "string"
+                },
+                "PartyRoleName": {
+                  "Name": "string"
+                },
+                "PartyRoleValidityPeriod": {
+                  "FromDateTime": {
+                    "DateTimeContent": "string",
+                    "TimeZoneCode": "string",
+                    "DaylightSavingIndicator": "string"
+                  },
+                  "ToDateTime": {
+                    "DateTimeContent": "string",
+                    "TimeZoneCode": "string",
+                    "DaylightSavingIndicator": "string"
+                  }
+                },
+                "PartyInvolvementType": "Agreementinvolvement"
+              }
+            }
+          },
+          "LocationType": "Continent",
+          "LocationZoningType": {
+            "Text": "string"
+          },
+          "LocationNeighborhoodType": {
+            "Text": "string"
+          },
+          "LocationConstructionType": {
+            "Text": "string"
+          },
+          "LocationOccupancyType": {
+            "Text": "string"
+          },
+          "LocationValue": {
+            "Value": "string"
+          },
+          "LocationCapacity": {
+            "Text": "string"
+          },
+          "LocationIdentification": {
+            "IdentifierValue": {
+              "Value": "string"
+            },
+            "IdentifierIssuingAuthority": {
+              "PartyReference": {
+                "PartyName": {
+                  "Name": "string"
+                },
+                "PartyType": "Person",
+                "PartyDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "PartyIdentification": {
+                  "PartyIdentificationType": "Taxidentificationnumber",
+                  "PartyIdentification": "string"
+                },
+                "PartyLegalStructureType": "Individual"
+              },
+              "PartyInvolvement": {
+                "PartyRoleType": {
+                  "Text": "string"
+                },
+                "PartyRoleName": {
+                  "Name": "string"
+                },
+                "PartyRoleValidityPeriod": {
+                  "FromDateTime": {
+                    "DateTimeContent": "string",
+                    "TimeZoneCode": "string",
+                    "DaylightSavingIndicator": "string"
+                  },
+                  "ToDateTime": {
+                    "DateTimeContent": "string",
+                    "TimeZoneCode": "string",
+                    "DaylightSavingIndicator": "string"
+                  }
+                },
+                "PartyInvolvementType": "Agreementinvolvement"
+              }
+            },
+            "IdentifierStartDate": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "IdentifierEndDate": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "LocationAddress": "string",
+          "LocationName": {
+            "Name": "string"
+          },
+          "LocationTimeZone": {
+            "Text": "string"
+          }
+        }
+      },
+      "BranchName": {
+        "Name": "string"
+      }
+    },
+    "AccountType": "DebitAccount",
+    "AccountCurrency": {
+      "AccountCurrencyType": "BaseCurrency",
+      "AccountCurrency": {
+        "Currencycode": "string"
+      }
+    },
+    "TaxReference": {
+      "IdentifierValue": {
+        "Value": "string"
+      },
+      "IdentifierIssuingAuthority": {
+        "PartyReference": {
+          "PartyName": {
+            "Name": "string"
+          },
+          "PartyType": "Person",
+          "PartyDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "PartyIdentification": {
+            "PartyIdentificationType": "Taxidentificationnumber",
+            "PartyIdentification": "string"
+          },
+          "PartyLegalStructureType": "Individual"
+        },
+        "PartyInvolvement": {
+          "PartyRoleType": {
+            "Text": "string"
+          },
+          "PartyRoleName": {
+            "Name": "string"
+          },
+          "PartyRoleValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "PartyInvolvementType": "Agreementinvolvement"
+        }
+      },
+      "IdentifierStartDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      },
+      "IdentifierEndDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      }
+    },
+    "EntitlementOptionDefinition": {
+      "ObligationOrEntitlementSubject": {
+        "Subject": "string"
+      },
+      "ObligationOrEntitlementType": "SweepArrangement",
+      "ObligationOrEntitlementModality": {
+        "ServiceArrangementModalityType": "AllocationModality"
+      },
+      "ObligationOrEntitlementDefinition": {
+        "Text": "string"
+      }
+    },
+    "EntitlementOptionSetting": {
+      "ObligationOrEntitlementSubject": {
+        "Subject": "string"
+      },
+      "ObligationOrEntitlementType": "SweepArrangement",
+      "ObligationOrEntitlementModality": {
+        "ServiceArrangementModalityType": "AllocationModality"
+      },
+      "ObligationOrEntitlementDefinition": {
+        "Text": "string"
+      }
+    },
+    "RestrictionOptionDefinition": {
+      "AccountRestrictionIdentifier": {
+        "IdentifierValue": {
+          "Value": "string"
+        },
+        "IdentifierIssuingAuthority": {
+          "PartyReference": {
+            "PartyName": {
+              "Name": "string"
+            },
+            "PartyType": "Person",
+            "PartyDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "PartyIdentification": {
+              "PartyIdentificationType": "Taxidentificationnumber",
+              "PartyIdentification": "string"
+            },
+            "PartyLegalStructureType": "Individual"
+          },
+          "PartyInvolvement": {
+            "PartyRoleType": {
+              "Text": "string"
+            },
+            "PartyRoleName": {
+              "Name": "string"
+            },
+            "PartyRoleValidityPeriod": {
+              "FromDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "ToDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              }
+            },
+            "PartyInvolvementType": "Agreementinvolvement"
+          }
+        },
+        "IdentifierStartDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "IdentifierEndDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "AccountRestrictionType": {
+        "Text": "string"
+      },
+      "AccountRestrictionDescription": {
+        "Text": "string"
+      },
+      "AccountRestrictionValidityPeriod": {
+        "FromDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "ToDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "AccountRestrictionStatus": {
+        "AccountRestrictionStatus": {
+          "StatusReason": {
+            "Text": "string"
+          },
+          "StatusDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "StatusValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "StatusInvolvedParty": {
+            "PartyReference": {
+              "PartyName": {
+                "Name": "string"
+              },
+              "PartyType": "Person",
+              "PartyDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "PartyIdentification": {
+                "PartyIdentificationType": "Taxidentificationnumber",
+                "PartyIdentification": "string"
+              },
+              "PartyLegalStructureType": "Individual"
+            },
+            "PartyInvolvement": {
+              "PartyRoleType": {
+                "Text": "string"
+              },
+              "PartyRoleName": {
+                "Name": "string"
+              },
+              "PartyRoleValidityPeriod": {
+                "FromDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "ToDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                }
+              },
+              "PartyInvolvementType": "Agreementinvolvement"
+            }
+          }
+        },
+        "AccountRestrictionStatusType": "Active"
+      },
+      "AccountRestrictionRegulator": {
+        "PartyReference": {
+          "PartyName": {
+            "Name": "string"
+          },
+          "PartyType": "Person",
+          "PartyDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "PartyIdentification": {
+            "PartyIdentificationType": "Taxidentificationnumber",
+            "PartyIdentification": "string"
+          },
+          "PartyLegalStructureType": "Individual"
+        },
+        "PartyInvolvement": {
+          "PartyRoleType": {
+            "Text": "string"
+          },
+          "PartyRoleName": {
+            "Name": "string"
+          },
+          "PartyRoleValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "PartyInvolvementType": "Agreementinvolvement"
+        }
+      }
+    },
+    "RestrictionOptionSetting": {
+      "AccountRestrictionIdentifier": {
+        "IdentifierValue": {
+          "Value": "string"
+        },
+        "IdentifierIssuingAuthority": {
+          "PartyReference": {
+            "PartyName": {
+              "Name": "string"
+            },
+            "PartyType": "Person",
+            "PartyDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "PartyIdentification": {
+              "PartyIdentificationType": "Taxidentificationnumber",
+              "PartyIdentification": "string"
+            },
+            "PartyLegalStructureType": "Individual"
+          },
+          "PartyInvolvement": {
+            "PartyRoleType": {
+              "Text": "string"
+            },
+            "PartyRoleName": {
+              "Name": "string"
+            },
+            "PartyRoleValidityPeriod": {
+              "FromDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "ToDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              }
+            },
+            "PartyInvolvementType": "Agreementinvolvement"
+          }
+        },
+        "IdentifierStartDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "IdentifierEndDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "AccountRestrictionType": {
+        "Text": "string"
+      },
+      "AccountRestrictionDescription": {
+        "Text": "string"
+      },
+      "AccountRestrictionValidityPeriod": {
+        "FromDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "ToDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "AccountRestrictionStatus": {
+        "AccountRestrictionStatus": {
+          "StatusReason": {
+            "Text": "string"
+          },
+          "StatusDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "StatusValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "StatusInvolvedParty": {
+            "PartyReference": {
+              "PartyName": {
+                "Name": "string"
+              },
+              "PartyType": "Person",
+              "PartyDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "PartyIdentification": {
+                "PartyIdentificationType": "Taxidentificationnumber",
+                "PartyIdentification": "string"
+              },
+              "PartyLegalStructureType": "Individual"
+            },
+            "PartyInvolvement": {
+              "PartyRoleType": {
+                "Text": "string"
+              },
+              "PartyRoleName": {
+                "Name": "string"
+              },
+              "PartyRoleValidityPeriod": {
+                "FromDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "ToDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                }
+              },
+              "PartyInvolvementType": "Agreementinvolvement"
+            }
+          }
+        },
+        "AccountRestrictionStatusType": "Active"
+      },
+      "AccountRestrictionRegulator": {
+        "PartyReference": {
+          "PartyName": {
+            "Name": "string"
+          },
+          "PartyType": "Person",
+          "PartyDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "PartyIdentification": {
+            "PartyIdentificationType": "Taxidentificationnumber",
+            "PartyIdentification": "string"
+          },
+          "PartyLegalStructureType": "Individual"
+        },
+        "PartyInvolvement": {
+          "PartyRoleType": {
+            "Text": "string"
+          },
+          "PartyRoleName": {
+            "Name": "string"
+          },
+          "PartyRoleValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "PartyInvolvementType": "Agreementinvolvement"
+        }
+      }
+    },
+    "Associations": {
+      "AccountInvolvementType": "PartyIsOwnerOfAccount",
+      "AccountReference": {
+        "AccountStatus": {
+          "AccountStatus": {
+            "StatusReason": {
+              "Text": "string"
+            },
+            "StatusDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "StatusValidityPeriod": {
+              "FromDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "ToDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              }
+            },
+            "StatusInvolvedParty": {
+              "PartyReference": {
+                "PartyName": {
+                  "Name": "string"
+                },
+                "PartyType": "Person",
+                "PartyDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "PartyIdentification": {
+                  "PartyIdentificationType": "Taxidentificationnumber",
+                  "PartyIdentification": "string"
+                },
+                "PartyLegalStructureType": "Individual"
+              },
+              "PartyInvolvement": {
+                "PartyRoleType": {
+                  "Text": "string"
+                },
+                "PartyRoleName": {
+                  "Name": "string"
+                },
+                "PartyRoleValidityPeriod": {
+                  "FromDateTime": {
+                    "DateTimeContent": "string",
+                    "TimeZoneCode": "string",
+                    "DaylightSavingIndicator": "string"
+                  },
+                  "ToDateTime": {
+                    "DateTimeContent": "string",
+                    "TimeZoneCode": "string",
+                    "DaylightSavingIndicator": "string"
+                  }
+                },
+                "PartyInvolvementType": "Agreementinvolvement"
+              }
+            }
+          },
+          "AccountStatusType": "Enabled"
+        },
+        "AccountIdentification": {
+          "AccountIdentificationType": "BBAN",
+          "AccountIdentification": {
+            "IdentifierValue": {
+              "Value": "string"
+            },
+            "IdentifierIssuingAuthority": {
+              "PartyReference": {
+                "PartyName": {
+                  "Name": "string"
+                },
+                "PartyType": "Person",
+                "PartyDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "PartyIdentification": {
+                  "PartyIdentificationType": "Taxidentificationnumber",
+                  "PartyIdentification": "string"
+                },
+                "PartyLegalStructureType": "Individual"
+              },
+              "PartyInvolvement": {
+                "PartyRoleType": {
+                  "Text": "string"
+                },
+                "PartyRoleName": {
+                  "Name": "string"
+                },
+                "PartyRoleValidityPeriod": {
+                  "FromDateTime": {
+                    "DateTimeContent": "string",
+                    "TimeZoneCode": "string",
+                    "DaylightSavingIndicator": "string"
+                  },
+                  "ToDateTime": {
+                    "DateTimeContent": "string",
+                    "TimeZoneCode": "string",
+                    "DaylightSavingIndicator": "string"
+                  }
+                },
+                "PartyInvolvementType": "Agreementinvolvement"
+              }
+            },
+            "IdentifierStartDate": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "IdentifierEndDate": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          }
+        },
+        "AccountDate": {
+          "AccountDateType": "OpeningDate",
+          "AccountDate": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          }
+        },
+        "AccountType": {
+          "AccountType": "DebitAccount",
+          "AccountTypeName": {
+            "Name": "string"
+          }
+        },
+        "AccountPurpose": {
+          "Text": "string"
+        },
+        "AccountBalance": {
+          "BalanceAmount": {
+            "AmountValue": {
+              "Value": "string"
+            },
+            "AmountCurrency": {
+              "Currencycode": "string"
+            },
+            "DecimalPointPosition": "string",
+            "AmountType": "Principal"
+          },
+          "BalanceType": "Openingbalance",
+          "BalanceDate": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "BalanceIndicator": "Debit"
+        },
+        "AccountCurrency": {
+          "AccountCurrencyType": "BaseCurrency",
+          "AccountCurrency": {
+            "Currencycode": "string"
+          }
+        },
+        "AccountDescription": {
+          "Text": "string"
+        },
+        "AccountName": {
+          "Name": "string"
+        }
+      },
+      "PartyReference": {
+        "PartyName": {
+          "Name": "string"
+        },
+        "PartyType": "Person",
+        "PartyDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "PartyIdentification": {
+          "PartyIdentificationType": "Taxidentificationnumber",
+          "PartyIdentification": "string"
+        },
+        "PartyLegalStructureType": "Individual"
+      }
+    },
+    "AssociationType": "PartyIsOwnerOfAccount",
+    "AssociationObligationorEntitlement": {
+      "ObligationOrEntitlementSubject": {
+        "Subject": "string"
+      },
+      "ObligationOrEntitlementType": "SweepArrangement",
+      "ObligationOrEntitlementModality": {
+        "ServiceArrangementModalityType": "AllocationModality"
+      },
+      "ObligationOrEntitlementDefinition": {
+        "Text": "string"
+      }
+    },
+    "AssociationReference": {
+      "PartyName": {
+        "Name": "string"
+      },
+      "PartyType": "Person",
+      "PartyDateTime": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      },
+      "PartyIdentification": {
+        "PartyIdentificationType": "Taxidentificationnumber",
+        "PartyIdentification": "string"
+      },
+      "PartyLegalStructureType": "Individual"
+    },
+    "LinkedAccounts": {
+      "AccountStatus": {
+        "AccountStatus": {
+          "StatusReason": {
+            "Text": "string"
+          },
+          "StatusDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "StatusValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "StatusInvolvedParty": {
+            "PartyReference": {
+              "PartyName": {
+                "Name": "string"
+              },
+              "PartyType": "Person",
+              "PartyDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "PartyIdentification": {
+                "PartyIdentificationType": "Taxidentificationnumber",
+                "PartyIdentification": "string"
+              },
+              "PartyLegalStructureType": "Individual"
+            },
+            "PartyInvolvement": {
+              "PartyRoleType": {
+                "Text": "string"
+              },
+              "PartyRoleName": {
+                "Name": "string"
+              },
+              "PartyRoleValidityPeriod": {
+                "FromDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "ToDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                }
+              },
+              "PartyInvolvementType": "Agreementinvolvement"
+            }
+          }
+        },
+        "AccountStatusType": "Enabled"
+      },
+      "AccountIdentification": {
+        "AccountIdentificationType": "BBAN",
+        "AccountIdentification": {
+          "IdentifierValue": {
+            "Value": "string"
+          },
+          "IdentifierIssuingAuthority": {
+            "PartyReference": {
+              "PartyName": {
+                "Name": "string"
+              },
+              "PartyType": "Person",
+              "PartyDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "PartyIdentification": {
+                "PartyIdentificationType": "Taxidentificationnumber",
+                "PartyIdentification": "string"
+              },
+              "PartyLegalStructureType": "Individual"
+            },
+            "PartyInvolvement": {
+              "PartyRoleType": {
+                "Text": "string"
+              },
+              "PartyRoleName": {
+                "Name": "string"
+              },
+              "PartyRoleValidityPeriod": {
+                "FromDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "ToDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                }
+              },
+              "PartyInvolvementType": "Agreementinvolvement"
+            }
+          },
+          "IdentifierStartDate": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "IdentifierEndDate": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          }
+        }
+      },
+      "AccountDate": {
+        "AccountDateType": "OpeningDate",
+        "AccountDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "AccountType": {
+        "AccountType": "DebitAccount",
+        "AccountTypeName": {
+          "Name": "string"
+        }
+      },
+      "AccountPurpose": {
+        "Text": "string"
+      },
+      "AccountBalance": {
+        "BalanceAmount": {
+          "AmountValue": {
+            "Value": "string"
+          },
+          "AmountCurrency": {
+            "Currencycode": "string"
+          },
+          "DecimalPointPosition": "string",
+          "AmountType": "Principal"
+        },
+        "BalanceType": "Openingbalance",
+        "BalanceDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "BalanceIndicator": "Debit"
+      },
+      "AccountCurrency": {
+        "AccountCurrencyType": "BaseCurrency",
+        "AccountCurrency": {
+          "Currencycode": "string"
+        }
+      },
+      "AccountDescription": {
+        "Text": "string"
+      },
+      "AccountName": {
+        "Name": "string"
+      }
+    },
+    "LinkType": "AccountIsParentAccountForAccount",
+    "AccountDetails": {
+      "AccountStatus": {
+        "AccountStatus": {
+          "StatusReason": {
+            "Text": "string"
+          },
+          "StatusDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "StatusValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "StatusInvolvedParty": {
+            "PartyReference": {
+              "PartyName": {
+                "Name": "string"
+              },
+              "PartyType": "Person",
+              "PartyDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "PartyIdentification": {
+                "PartyIdentificationType": "Taxidentificationnumber",
+                "PartyIdentification": "string"
+              },
+              "PartyLegalStructureType": "Individual"
+            },
+            "PartyInvolvement": {
+              "PartyRoleType": {
+                "Text": "string"
+              },
+              "PartyRoleName": {
+                "Name": "string"
+              },
+              "PartyRoleValidityPeriod": {
+                "FromDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "ToDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                }
+              },
+              "PartyInvolvementType": "Agreementinvolvement"
+            }
+          }
+        },
+        "AccountStatusType": "Enabled"
+      },
+      "AccountIdentification": {
+        "AccountIdentificationType": "BBAN",
+        "AccountIdentification": {
+          "IdentifierValue": {
+            "Value": "string"
+          },
+          "IdentifierIssuingAuthority": {
+            "PartyReference": {
+              "PartyName": {
+                "Name": "string"
+              },
+              "PartyType": "Person",
+              "PartyDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "PartyIdentification": {
+                "PartyIdentificationType": "Taxidentificationnumber",
+                "PartyIdentification": "string"
+              },
+              "PartyLegalStructureType": "Individual"
+            },
+            "PartyInvolvement": {
+              "PartyRoleType": {
+                "Text": "string"
+              },
+              "PartyRoleName": {
+                "Name": "string"
+              },
+              "PartyRoleValidityPeriod": {
+                "FromDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "ToDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                }
+              },
+              "PartyInvolvementType": "Agreementinvolvement"
+            }
+          },
+          "IdentifierStartDate": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "IdentifierEndDate": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          }
+        }
+      },
+      "AccountDate": {
+        "AccountDateType": "OpeningDate",
+        "AccountDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "AccountType": {
+        "AccountType": "DebitAccount",
+        "AccountTypeName": {
+          "Name": "string"
+        }
+      },
+      "AccountPurpose": {
+        "Text": "string"
+      },
+      "AccountBalance": {
+        "BalanceAmount": {
+          "AmountValue": {
+            "Value": "string"
+          },
+          "AmountCurrency": {
+            "Currencycode": "string"
+          },
+          "DecimalPointPosition": "string",
+          "AmountType": "Principal"
+        },
+        "BalanceType": "Openingbalance",
+        "BalanceDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "BalanceIndicator": "Debit"
+      },
+      "AccountCurrency": {
+        "AccountCurrencyType": "BaseCurrency",
+        "AccountCurrency": {
+          "Currencycode": "string"
+        }
+      },
+      "AccountDescription": {
+        "Text": "string"
+      },
+      "AccountName": {
+        "Name": "string"
+      }
+    },
+    "PositionLimits": {
+      "LimitType": "Multilateral",
+      "LimitCurrency": {
+        "Currencycode": "string"
+      },
+      "LimitValidityPeriod": {
+        "FromDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "ToDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "LimitAmount": {
+        "AmountValue": {
+          "Value": "string"
+        },
+        "AmountCurrency": {
+          "Currencycode": "string"
+        },
+        "DecimalPointPosition": "string",
+        "AmountType": "Principal"
+      },
+      "LimitStatus": {
+        "LimitStatus": {
+          "StatusReason": {
+            "Text": "string"
+          },
+          "StatusDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "StatusValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "StatusInvolvedParty": {
+            "PartyReference": {
+              "PartyName": {
+                "Name": "string"
+              },
+              "PartyType": "Person",
+              "PartyDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "PartyIdentification": {
+                "PartyIdentificationType": "Taxidentificationnumber",
+                "PartyIdentification": "string"
+              },
+              "PartyLegalStructureType": "Individual"
+            },
+            "PartyInvolvement": {
+              "PartyRoleType": {
+                "Text": "string"
+              },
+              "PartyRoleName": {
+                "Name": "string"
+              },
+              "PartyRoleValidityPeriod": {
+                "FromDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "ToDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                }
+              },
+              "PartyInvolvementType": "Agreementinvolvement"
+            }
+          }
+        },
+        "LimitStatusType": "Enabled"
+      },
+      "LimitRate": {
+        "RateValue": {
+          "Value": "string"
+        },
+        "RateUnit": {
+          "Text": "string"
+        },
+        "RatePeriod": {
+          "FromDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "ToDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          }
+        },
+        "RateCapitalUnit": {
+          "Text": "string"
+        }
+      },
+      "LimitFrequency": {
+        "FrequencyCode": "Annual",
+        "FrequencyName": {
+          "Name": "string"
+        },
+        "FrequencyDefinition": {
+          "Text": "string"
+        }
+      },
+      "LimitIdentification": {
+        "IdentifierValue": {
+          "Value": "string"
+        },
+        "IdentifierIssuingAuthority": {
+          "PartyReference": {
+            "PartyName": {
+              "Name": "string"
+            },
+            "PartyType": "Person",
+            "PartyDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "PartyIdentification": {
+              "PartyIdentificationType": "Taxidentificationnumber",
+              "PartyIdentification": "string"
+            },
+            "PartyLegalStructureType": "Individual"
+          },
+          "PartyInvolvement": {
+            "PartyRoleType": {
+              "Text": "string"
+            },
+            "PartyRoleName": {
+              "Name": "string"
+            },
+            "PartyRoleValidityPeriod": {
+              "FromDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "ToDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              }
+            },
+            "PartyInvolvementType": "Agreementinvolvement"
+          }
+        },
+        "IdentifierStartDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "IdentifierEndDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "LimitStartDatetime": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      },
+      "LimitCreditDebitIndicator": "Debit",
+      "LimitAmountType": "Principal"
+    },
+    "PositionLimitType": "Multilateral",
+    "PositionLimitSettings": {
+      "LimitType": "Multilateral",
+      "LimitCurrency": {
+        "Currencycode": "string"
+      },
+      "LimitValidityPeriod": {
+        "FromDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "ToDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "LimitAmount": {
+        "AmountValue": {
+          "Value": "string"
+        },
+        "AmountCurrency": {
+          "Currencycode": "string"
+        },
+        "DecimalPointPosition": "string",
+        "AmountType": "Principal"
+      },
+      "LimitStatus": {
+        "LimitStatus": {
+          "StatusReason": {
+            "Text": "string"
+          },
+          "StatusDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "StatusValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "StatusInvolvedParty": {
+            "PartyReference": {
+              "PartyName": {
+                "Name": "string"
+              },
+              "PartyType": "Person",
+              "PartyDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "PartyIdentification": {
+                "PartyIdentificationType": "Taxidentificationnumber",
+                "PartyIdentification": "string"
+              },
+              "PartyLegalStructureType": "Individual"
+            },
+            "PartyInvolvement": {
+              "PartyRoleType": {
+                "Text": "string"
+              },
+              "PartyRoleName": {
+                "Name": "string"
+              },
+              "PartyRoleValidityPeriod": {
+                "FromDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                },
+                "ToDateTime": {
+                  "DateTimeContent": "string",
+                  "TimeZoneCode": "string",
+                  "DaylightSavingIndicator": "string"
+                }
+              },
+              "PartyInvolvementType": "Agreementinvolvement"
+            }
+          }
+        },
+        "LimitStatusType": "Enabled"
+      },
+      "LimitRate": {
+        "RateValue": {
+          "Value": "string"
+        },
+        "RateUnit": {
+          "Text": "string"
+        },
+        "RatePeriod": {
+          "FromDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "ToDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          }
+        },
+        "RateCapitalUnit": {
+          "Text": "string"
+        }
+      },
+      "LimitFrequency": {
+        "FrequencyCode": "Annual",
+        "FrequencyName": {
+          "Name": "string"
+        },
+        "FrequencyDefinition": {
+          "Text": "string"
+        }
+      },
+      "LimitIdentification": {
+        "IdentifierValue": {
+          "Value": "string"
+        },
+        "IdentifierIssuingAuthority": {
+          "PartyReference": {
+            "PartyName": {
+              "Name": "string"
+            },
+            "PartyType": "Person",
+            "PartyDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "PartyIdentification": {
+              "PartyIdentificationType": "Taxidentificationnumber",
+              "PartyIdentification": "string"
+            },
+            "PartyLegalStructureType": "Individual"
+          },
+          "PartyInvolvement": {
+            "PartyRoleType": {
+              "Text": "string"
+            },
+            "PartyRoleName": {
+              "Name": "string"
+            },
+            "PartyRoleValidityPeriod": {
+              "FromDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              },
+              "ToDateTime": {
+                "DateTimeContent": "string",
+                "TimeZoneCode": "string",
+                "DaylightSavingIndicator": "string"
+              }
+            },
+            "PartyInvolvementType": "Agreementinvolvement"
+          }
+        },
+        "IdentifierStartDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        },
+        "IdentifierEndDate": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string"
+        }
+      },
+      "LimitStartDatetime": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      },
+      "LimitCreditDebitIndicator": "Debit",
+      "LimitAmountType": "Principal"
+    },
+    "PositionLimitValue": {
+      "Value": "string"
+    },
+    "AccountDateType": "OpeningDate",
+    "AccountDate": {
+      "DateTimeContent": "string",
+      "TimeZoneCode": "string",
+      "DaylightSavingIndicator": "string"
+    },
+    "AccountBalance": {
+      "BalanceAmount": {
+        "AmountValue": {
+          "Value": "string"
+        },
+        "AmountCurrency": {
+          "Currencycode": "string"
+        },
+        "DecimalPointPosition": "string",
+        "AmountType": "Principal"
+      },
+      "BalanceType": "Openingbalance",
+      "BalanceDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      },
+      "BalanceIndicator": "Debit"
+    },
+    "CurrentAccountProductName": {
+      "Name": "string"
+    },
+    "CurrentAccountProductID": {
+      "IdentifierValue": {
+        "Value": "string"
+      },
+      "IdentifierIssuingAuthority": {
+        "PartyReference": {
+          "PartyName": {
+            "Name": "string"
+          },
+          "PartyType": "Person",
+          "PartyDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "PartyIdentification": {
+            "PartyIdentificationType": "Taxidentificationnumber",
+            "PartyIdentification": "string"
+          },
+          "PartyLegalStructureType": "Individual"
+        },
+        "PartyInvolvement": {
+          "PartyRoleType": {
+            "Text": "string"
+          },
+          "PartyRoleName": {
+            "Name": "string"
+          },
+          "PartyRoleValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "PartyInvolvementType": "Agreementinvolvement"
+        }
+      },
+      "IdentifierStartDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      },
+      "IdentifierEndDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      }
+    },
+    "CurrentAccountProductType": "BusinessCurrentAccount",
+    "CurrntAccountProductMarketingStateID": {
+      "IdentifierValue": {
+        "Value": "string"
+      },
+      "IdentifierIssuingAuthority": {
+        "PartyReference": {
+          "PartyName": {
+            "Name": "string"
+          },
+          "PartyType": "Person",
+          "PartyDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "PartyIdentification": {
+            "PartyIdentificationType": "Taxidentificationnumber",
+            "PartyIdentification": "string"
+          },
+          "PartyLegalStructureType": "Individual"
+        },
+        "PartyInvolvement": {
+          "PartyRoleType": {
+            "Text": "string"
+          },
+          "PartyRoleName": {
+            "Name": "string"
+          },
+          "PartyRoleValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "PartyInvolvementType": "Agreementinvolvement"
+        }
+      },
+      "IdentifierStartDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      },
+      "IdentifierEndDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      }
+    },
+    "CurrentAccountSecondaryProductID": {
+      "IdentifierValue": {
+        "Value": "string"
+      },
+      "IdentifierIssuingAuthority": {
+        "PartyReference": {
+          "PartyName": {
+            "Name": "string"
+          },
+          "PartyType": "Person",
+          "PartyDateTime": {
+            "DateTimeContent": "string",
+            "TimeZoneCode": "string",
+            "DaylightSavingIndicator": "string"
+          },
+          "PartyIdentification": {
+            "PartyIdentificationType": "Taxidentificationnumber",
+            "PartyIdentification": "string"
+          },
+          "PartyLegalStructureType": "Individual"
+        },
+        "PartyInvolvement": {
+          "PartyRoleType": {
+            "Text": "string"
+          },
+          "PartyRoleName": {
+            "Name": "string"
+          },
+          "PartyRoleValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string"
+            }
+          },
+          "PartyInvolvementType": "Agreementinvolvement"
+        }
+      },
+      "IdentifierStartDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      },
+      "IdentifierEndDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string"
+      }
+    }
+  }
+]

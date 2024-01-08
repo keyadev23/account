@@ -1,5 +1,6 @@
 package com.ob.tsb.beneficiaries.service.impl;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.ob.tsb.beneficiaries.model.response.beneficiary.BeneficiaryRespoonse;
 import com.ob.tsb.beneficiaries.service.AuthService;
 import com.ob.tsb.beneficiaries.service.BeneficiaryService;
@@ -13,10 +14,12 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.util.retry.Retry;
 
 import java.time.Duration;
+import java.util.List;
 
 @Service
 public class BeneficiaryServiceImpl implements BeneficiaryService {

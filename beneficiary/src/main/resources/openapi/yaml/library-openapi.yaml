@@ -1,0 +1,106 @@
+openapi: 3.0.3
+info:
+  title: Library API - OpenAPI 3.0
+  description:
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: keya.dev@tsb.co.uk
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: '1.0.11'
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://localhost:8080/api/v1
+    description: Development server
+  - url: http://localhost:8081/api/v1
+    description: Staging server
+  - url: http://localhost:8082/api/v1
+    description: Production server
+tags:
+  - name: Book
+    description: Operations about book
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: Author
+    description: Operations about author
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+
+paths:
+  /v1/accounts/{AccountId}/beneficiaries:
+    get:
+      tags:
+        - Beneficiaries
+      summary: get beneficiaries by accountId.
+      description: Returns a single record
+      operationId: getBeneficiaries
+      parameters:
+        - name: AccountId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomException'
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BeneficiaryRespoonse'
+
+components:
+    schemas:
+      CustomException:
+        type: object
+        properties:
+          status:
+            type: string
+          description:
+            type: string
+      BeneficiaryRespoonse:
+        type: object
+        properties:
+          Data:
+            type: array
+            items:
+              type: object
+              properties:
+                Beneficiary:
+                  type: object
+                  properties:
+                    AccountId:
+                      type: string
+                    BeneficiaryId:
+                      type: string
+                    Reference:
+                      type: string
+                    CreditorAccount:
+                      type: object
+                      properties:
+                        SchemeName:
+                          type: string
+                        Identification:
+                          type: string
+                        Name:
+                          type: string
+          Links:
+            type: object
+            properties:
+              Self:
+                type: string
+          Meta:
+            type: object
+            properties:
+              TotalPages:
+                type: string

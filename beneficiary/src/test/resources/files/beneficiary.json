@@ -1,0 +1,22 @@
+{
+  "Data": {
+    "Beneficiary": [
+      {
+        "AccountId": "22290",
+        "BeneficiaryId": "Ben1",
+        "Reference": "Towbar Club",
+        "CreditorAccount": {
+          "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+          "Identification": "80200112345678",
+          "Name": "Mrs Juniper"
+        }
+      }
+    ]
+  },
+  "Links": {
+    "Self": "https://api.alphabank.com/open-banking/v3.1/aisp/accounts/22289/beneficiaries/"
+  },
+  "Meta": {
+    "TotalPages": 1
+  }
+}

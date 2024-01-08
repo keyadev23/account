@@ -3,14 +3,13 @@ package com.ob.tsb.beneficiaries.controller.impl;
 import com.ob.tsb.beneficiaries.controller.BeneficiaryApiVersion;
 import com.ob.tsb.beneficiaries.model.response.beneficiary.BeneficiaryRespoonse;
 import com.ob.tsb.beneficiaries.service.BeneficiaryService;
+import com.ob.tsb.beneficiaries.service.impl.BeneficiaryServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -24,10 +23,14 @@ public class BeneficiaryController implements BeneficiaryApiVersion {
     private final BeneficiaryService beneficiaryService;
 
     @Autowired
-    public BeneficiaryController(BeneficiaryService beneficiaryService) {
+    public BeneficiaryController(BeneficiaryServiceImpl beneficiaryService) {
         this.beneficiaryService = beneficiaryService;
     }
 
+    @Operation(
+            summary = "Get all beneficiary",
+            description = "This endpoint is used to get all books ..."
+    )
     @GetMapping("/accounts/{AccountId}/beneficiaries")
     public Mono<BeneficiaryRespoonse> getBeneficiaries(@RequestHeader("AuthDate") String authDate,
                                                      @RequestHeader("CustomerIpAddress") String customerIpAddress,

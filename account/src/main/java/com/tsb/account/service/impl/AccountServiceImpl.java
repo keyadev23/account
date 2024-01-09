@@ -5,6 +5,7 @@ import com.tsb.account.dto.ObjectDtoMapper;
 import com.tsb.account.dto.accountdto.AccountResponseDto;
 import com.tsb.account.dto.bianspecificresponsedto.BIANResponse;
 import com.tsb.account.dto.mapper.BianToObMapper;
+import com.tsb.account.dto.mapstruct.BianDtoMapper;
 import com.tsb.account.exception.CustomException;
 import com.tsb.account.service.AccountService;
 import com.tsb.account.service.AuthService;
@@ -79,10 +80,12 @@ public class AccountServiceImpl implements AccountService {
                             .bodyToMono(String.class)
                             .map(response -> {
                                 logger.info("Accounts Response: {}", response);
+
                                 List<BIANResponse> bianResponse= JsonUtil.toObjectOfList(response,
                                         new TypeReference<List<BIANResponse>>() {
                                         });
                                 logger.info("Bian Response: {}", bianResponse.get(0));
+                               // return BianDtoMapper.bianToOb(bianResponse);
                                 return BianToObMapper.bianToObListMapper(bianResponse, AccountResponseDto.class);
                             })
                             .retryWhen(Retry.fixedDelay(maxAttempt, Duration.ofMillis(delayMillis)))

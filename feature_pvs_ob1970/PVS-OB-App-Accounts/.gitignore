@@ -1,0 +1,49 @@
+#Maven
+/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.branch
+target/
+
+#Intellij
+.idea/
+*.iml
+*.iws
+*.iws.*
+*.ipr
+
+#Eclipse
+.classpath
+.project
+.settings/
+
+#VS Code
+.vscode/
+.settings.json
+*.code-workspace
+
+#Logs
+logs/
+*.log
+
+#Package Files
+*.jar
+*.war
+*.ear
+
+#Operating System Files
+.DS_Store
+Thumbs.db
+
+#Windows Installer Files
+*.cab
+*.msi
+*.msm
+*.msp
+
+#Windows Shortcuts
+*.lnk
+
+#Open API
+.openapi-generator/
+

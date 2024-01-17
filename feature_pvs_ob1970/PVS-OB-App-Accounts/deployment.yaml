@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pvs-ob-accounts
+  namespace: ob-sb-development-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pvs-ob-accounts
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1    
+  template:
+    metadata:
+      labels:
+        app: pvs-ob-accounts
+    spec:
+      containers:
+      - name: pvs-ob-accounts
+        image: "337141981580.dkr.ecr.eu-west-2.amazonaws.com/tsb_sandbox1_ecr:PVS_OB_Accounts_updatesha"
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: ecr-pull-secret
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pvs-ob-accounts
+  namespace: ob-sb-development-ns
+spec:
+  selector:
+    app: pvs-ob-accounts
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: NodePort

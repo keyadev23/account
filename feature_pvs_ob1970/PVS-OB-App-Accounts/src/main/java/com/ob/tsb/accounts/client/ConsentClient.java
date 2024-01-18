@@ -1,5 +1,6 @@
 package com.ob.tsb.accounts.client;
 
+import com.ob.tsb.accounts.dto.consentDto.ConsentResponse;
 import com.ob.tsb.accounts.model.Auth;
 import com.ob.tsb.accounts.model.Consent;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,4 +33,5 @@ public class ConsentClient {
                 .bodyToMono(Consent.class).block();
         return consent.isValid();
     }
+
 }

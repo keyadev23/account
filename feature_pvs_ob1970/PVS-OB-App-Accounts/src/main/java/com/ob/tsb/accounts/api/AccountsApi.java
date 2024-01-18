@@ -5,7 +5,10 @@
  */
 package com.ob.tsb.accounts.api;
 
+import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.response.AccountsResponse;
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -129,6 +132,14 @@ public interface AccountsApi {
     ) {
         return accountsById(accountId, authorization, xFapiAuthDate, xFapiCustomerIpAddress, xFapiInteractionId, accept, exchange);
     }
+
+    @ExceptionHandler(CustomException.class)
+    @RateLimiter(name = "accountRateLimit", fallbackMethod = "rateLimitFallbackMethod")
+    @Bulkhead(name = "accountBulkheadInstance", fallbackMethod = "bulkheadFallback")
+    Mono<ResponseEntity<AccountsResponse>> accounts(@RequestHeader("x-fapi-auth-date") String xFapiAuthDate,
+                                                    @RequestHeader("x-fapi-customer-ip-address") String xFapiCustomerIpAddress,
+                                                    @RequestHeader("x-fapi-interaction-id") String xFapiInteractionId,
+                                                    @RequestHeader("Accept") String accept, ServerWebExchange exchange);
 
     // Override this method
     default  Mono<ResponseEntity<AccountsResponse>> accountsById(String accountId, String authorization, String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept,  final ServerWebExchange exchange) {

@@ -11,8 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
@@ -45,8 +45,11 @@ public class AccountsController implements AccountsApi {
     @Override
     @RateLimiter(name = "accountRateLimit", fallbackMethod = "rateLimitFallbackMethod")
     @Bulkhead(name = "accountBulkheadInstance", fallbackMethod = "bulkheadFallback")
-    public Mono<ResponseEntity<AccountsResponse>> accounts(String authorization, String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept, ServerWebExchange exchange) {
-       return accountService.getAccounts();
+    public Mono<ResponseEntity<AccountsResponse>> accounts(@RequestHeader("x-fapi-auth-date") String xFapiAuthDate,
+                                                           @RequestHeader("x-fapi-customer-ip-address") String xFapiCustomerIpAddress,
+                                                           @RequestHeader("x-fapi-interaction-id") String xFapiInteractionId,
+                                                           @RequestHeader("Accept") String accept, ServerWebExchange exchange) {
+       return accountService.getAccounts(xFapiAuthDate, xFapiCustomerIpAddress, xFapiInteractionId, accept);
     }
 
     @Override

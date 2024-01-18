@@ -4,17 +4,12 @@ import com.ob.tsb.accounts.client.AuthClient;
 import com.ob.tsb.accounts.service.AuthService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
-import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.ExecutorService;
-
 import static com.ob.tsb.accounts.util.ApplicationConstants.CIRCUIT_BREAKER_FALLBACK_MSG;
-import static com.ob.tsb.accounts.util.ApplicationConstants.RATE_LIMIT_FALLBACK_MSG;
 
 
 @Service
@@ -32,6 +27,13 @@ public class AuthServiceImpl implements AuthService {
     @CircuitBreaker(name = "authService", fallbackMethod = "authServiceCbFallback")
     public boolean validateToken(String token) {
         return authClient.validatePrivileage(token);
+    }
+
+    @Override
+    @CircuitBreaker(name = "authService", fallbackMethod = "authServiceCbFallback")
+    public String getAccessToken() {
+
+        return null;
     }
 
     public ResponseEntity authServiceCbFallback(String token, RequestNotPermitted requestNotPermitted) {

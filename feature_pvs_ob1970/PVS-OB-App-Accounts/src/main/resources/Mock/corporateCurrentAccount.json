@@ -1,0 +1,584 @@
+{
+  "ProductInstanceReference": {
+    "CurrentAccountAgreement": "string"
+  },
+  "CorporateCurrentAccountNumber": {
+    "Account": "string",
+    "IBAN": "string",
+    "BBAN": "string",
+    "UPIC": "string",
+    "ProprietaryIdentification": "string",
+    "Name": "string",
+    "CostReferencePattern": "string",
+    "Number": "string"
+  },
+  "Accountidentification": {
+    "AccountIdentificationType": "BBAN",
+    "AccountIdentification": {
+      "IdentifierValue": {
+        "Value": "string"
+      },
+      "IdentifierIssuingAuthority": {
+        "PartyReference": {
+          "ContactPoint": "string",
+          "Identification": "string",
+          "MoneyLaunderingCheck": "string",
+          "TaxationConditions": "string",
+          "Domicile": "string",
+          "Residence": "string",
+          "PowerOfAttorney": "string",
+          "Location": "string",
+          "CloseLinkSecurity": "string",
+          "CreditQuality": "string",
+          "ShareholdingType": "string",
+          "AccountIdentificationType": "BBAN"
+        },
+        "PartyInvolvement": {
+          "PartyRoleType": {
+            "Text": "string"
+          },
+          "PartyRoleName": "string",
+          "PartyRoleValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string",
+              "Datetime": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string",
+              "Datetime": "string"
+            },
+            "Datetimeperiod": "string"
+          },
+          "PartyInvolvementType": "Agreementinvolvement"
+        }
+      },
+      "IdentifierStartDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string",
+        "Datetime": "string"
+      },
+      "IdentifierEndDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string",
+        "Datetime": "string"
+      },
+      "Identifier": "string"
+    },
+    "Accountidentification": "string"
+  },
+  "CustomerReference": {
+    "PartyReference": {
+      "ContactPoint": "string",
+      "Identification": "string",
+      "MoneyLaunderingCheck": "string",
+      "TaxationConditions": "string",
+      "Domicile": "string",
+      "Residence": "string",
+      "PowerOfAttorney": "string",
+      "Location": "string",
+      "CloseLinkSecurity": "string",
+      "CreditQuality": "string",
+      "ShareholdingType": "string",
+      "AccountIdentificationType": "BBAN"
+    },
+    "PartyInvolvement": {
+      "PartyRoleType": {
+        "Text": "string"
+      },
+      "PartyRoleName": "string",
+      "PartyRoleValidityPeriod": {
+        "FromDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string",
+          "Datetime": "string"
+        },
+        "ToDateTime": {
+          "DateTimeContent": "string",
+          "TimeZoneCode": "string",
+          "DaylightSavingIndicator": "string",
+          "Datetime": "string"
+        },
+        "Datetimeperiod": "string"
+      },
+      "PartyInvolvementType": "Agreementinvolvement"
+    }
+  },
+  "BankBranchLocationReference": {
+    "BranchIdentification": {
+      "IdentifierValue": {
+        "Value": "string"
+      },
+      "IdentifierIssuingAuthority": {
+        "PartyReference": {
+          "ContactPoint": "string",
+          "Identification": "string",
+          "MoneyLaunderingCheck": "string",
+          "TaxationConditions": "string",
+          "Domicile": "string",
+          "Residence": "string",
+          "PowerOfAttorney": "string",
+          "Location": "string",
+          "CloseLinkSecurity": "string",
+          "CreditQuality": "string",
+          "ShareholdingType": "string",
+          "AccountIdentificationType": "BBAN"
+        },
+        "PartyInvolvement": {
+          "PartyRoleType": {
+            "Text": "string"
+          },
+          "PartyRoleName": "string",
+          "PartyRoleValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string",
+              "Datetime": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string",
+              "Datetime": "string"
+            },
+            "Datetimeperiod": "string"
+          },
+          "PartyInvolvementType": "Agreementinvolvement"
+        }
+      },
+      "IdentifierStartDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string",
+        "Datetime": "string"
+      },
+      "IdentifierEndDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string",
+        "Datetime": "string"
+      },
+      "Identifier": "string"
+    },
+    "BranchLegalEntityIdentification": {
+      "IdentifierValue": {
+        "Value": "string"
+      },
+      "IdentifierIssuingAuthority": {
+        "PartyReference": {
+          "ContactPoint": "string",
+          "Identification": "string",
+          "MoneyLaunderingCheck": "string",
+          "TaxationConditions": "string",
+          "Domicile": "string",
+          "Residence": "string",
+          "PowerOfAttorney": "string",
+          "Location": "string",
+          "CloseLinkSecurity": "string",
+          "CreditQuality": "string",
+          "ShareholdingType": "string",
+          "AccountIdentificationType": "BBAN"
+        },
+        "PartyInvolvement": {
+          "PartyRoleType": {
+            "Text": "string"
+          },
+          "PartyRoleName": "string",
+          "PartyRoleValidityPeriod": {
+            "FromDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string",
+              "Datetime": "string"
+            },
+            "ToDateTime": {
+              "DateTimeContent": "string",
+              "TimeZoneCode": "string",
+              "DaylightSavingIndicator": "string",
+              "Datetime": "string"
+            },
+            "Datetimeperiod": "string"
+          },
+          "PartyInvolvementType": "Agreementinvolvement"
+        }
+      },
+      "IdentifierStartDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string",
+        "Datetime": "string"
+      },
+      "IdentifierEndDate": {
+        "DateTimeContent": "string",
+        "TimeZoneCode": "string",
+        "DaylightSavingIndicator": "string",
+        "Datetime": "string"
+      },
+      "Identifier": "string"
+    },
+    "BranchAddress": {
+      "AddressType": "PostalAddress",
+      "LocationReference": {
+        "NativePerson": "string",
+        "System": "string",
+        "DomiciledParty": "string",
+        "OperatingOrganisation": "string",
+        "Address": "string",
+        "IssuedDocument": "string",
+        "Incoterms": "string",
+        "DepartureTransportParameters": "string",
+        "DestinationTransportParameters": "string",
+        "InsuranceCertificate": "string",
+        "Party": "string",
+        "RelatedExpiry": "string",
+        "RelatedJurisdiction": "string",
+        "Identification": "string",
+        "TaxableParty": "string",
+        "RegisteredOrganisation": "string",
+        "RelatedTransport": "string",
+        "TimeZone": "string"
+      },
+      "Address": "string"
+    },
+    "BranchName": "string"
+  },
+  "CorporateCurrentAccountType": {
+    "AccountType": "DebitAccount",
+    "AccountTypeName": "string",
+    "Accounttype": "string"
+  },
+  "AccountCurrency": "string",
+  "TaxReference": {
+    "Identification": "string",
+    "IdentificationForContactPoint": "string",
+    "IdentificationForAccount": "string",
+    "RelatedPartyIdentification": "string",
+    "IssueDate": "string",
+    "ExpiryDate": "string",
+    "Scheme": "string",
+    "IdentificationForSecuritiesCertificate": "string",
+    "IdentificationForLot": "string",
+    "PartyRole": "string",
+    "IdentificationForCashProceedsIncome": "string",
+    "RelatedStatusReason": "string",
+    "IdentificationForBankTransaction": "string",
+    "IdentificationForAccountCostReferencePattern": "string",
+    "Account": "string",
+    "RelatedSystemIdentification": "string",
+    "IdentificationForInterestName": "string",
+    "RelatedCashAccountService": "string",
+    "IdentificationForInvestmentFundClass": "string",
+    "IdentifiedLocation": "string",
+    "RelatedSecuritiesIdentification": "string",
+    "IdentifiedDocument": "string",
+    "RelatedPurchaseOrder": "string",
+    "RelatedCertificate": "string"
+  },
+  "EntitlementOptionDefinition": {
+    "ObligationOrEntitlementSubject": {
+      "Subject": "string"
+    },
+    "ObligationOrEntitlementType": "SweepArrangement",
+    "ObligationOrEntitlementModality": {
+      "ServiceArrangementModalityType": "AllocationModality"
+    },
+    "ObligationOrEntitlementDefinition": {
+      "Text": "string"
+    }
+  },
+  "EntitlementOptionSetting": {
+    "ObligationOrEntitlementSubject": {
+      "Subject": "string"
+    },
+    "ObligationOrEntitlementType": "SweepArrangement",
+    "ObligationOrEntitlementModality": {
+      "ServiceArrangementModalityType": "AllocationModality"
+    },
+    "ObligationOrEntitlementDefinition": {
+      "Text": "string"
+    }
+  },
+  "RestrictionOptionDefinition": {
+    "Account": "string",
+    "RestrictionType": "string",
+    "ValidityPeriod": "string"
+  },
+  "RestrictionOptionSetting": {
+    "Account": "string",
+    "RestrictionType": "string",
+    "ValidityPeriod": "string"
+  },
+  "Associations": {
+    "Account": "string"
+  },
+  "AssociationType": "PartyIsOwnerOfAccount",
+  "AssociationObligationEntitlement": {
+    "ObligationOrEntitlementSubject": {
+      "Subject": "string"
+    },
+    "ObligationOrEntitlementType": "SweepArrangement",
+    "ObligationOrEntitlementModality": {
+      "ServiceArrangementModalityType": "AllocationModality"
+    },
+    "ObligationOrEntitlementDefinition": {
+      "Text": "string"
+    }
+  },
+  "AssociationReference": {
+    "ContactPoint": "string",
+    "Identification": "string",
+    "MoneyLaunderingCheck": "string",
+    "TaxationConditions": "string",
+    "Domicile": "string",
+    "Residence": "string",
+    "PowerOfAttorney": "string",
+    "Location": "string",
+    "CloseLinkSecurity": "string",
+    "CreditQuality": "string",
+    "ShareholdingType": "string",
+    "AccountIdentificationType": "BBAN"
+  },
+  "LinkedAccounts": {
+    "BaseCurrency": "string",
+    "Identification": "string",
+    "ParentAccount": "string",
+    "SubAccount": "string",
+    "RelatedFundProcessingCharacteristics": "string",
+    "Status": "string",
+    "Language": "string",
+    "PartyRole": "string",
+    "TradePartyRole": "string",
+    "ReportingCurrency": "string",
+    "AccountRestriction": "string",
+    "SettlementPartyRole": "string",
+    "Purpose": "string",
+    "ClosingDate": "string",
+    "LiveDate": "string",
+    "ReportedPeriod": "string",
+    "InvestmentFundPartyRole": "string",
+    "RelatedCollateralProcess": "string",
+    "Type": "string",
+    "RelatedProceedsDelivery": "string",
+    "RelatedCorporateActionPartyRole": "string",
+    "DefaultFundAccountOwner": "string",
+    "System": "string",
+    "Balance": "string",
+    "Entry": "string",
+    "AccountContract": "string",
+    "OpeningDate": "string",
+    "CurrencyExchange": "string",
+    "DefaultFundContribution": "string",
+    "SystemMember": "string",
+    "CollateralAccountType": "string",
+    "AccountService": "string",
+    "Reconciliation": "string",
+    "ManagedAccountProduct": "string"
+  },
+  "LinkType": "AccountIsLinkedToAccount",
+  "AccountDetails": {
+    "BaseCurrency": "string",
+    "Identification": "string",
+    "ParentAccount": "string",
+    "SubAccount": "string",
+    "RelatedFundProcessingCharacteristics": "string",
+    "Status": "string",
+    "Language": "string",
+    "PartyRole": "string",
+    "TradePartyRole": "string",
+    "ReportingCurrency": "string",
+    "AccountRestriction": "string",
+    "SettlementPartyRole": "string",
+    "Purpose": "string",
+    "ClosingDate": "string",
+    "LiveDate": "string",
+    "ReportedPeriod": "string",
+    "InvestmentFundPartyRole": "string",
+    "RelatedCollateralProcess": "string",
+    "Type": "string",
+    "RelatedProceedsDelivery": "string",
+    "RelatedCorporateActionPartyRole": "string",
+    "DefaultFundAccountOwner": "string",
+    "System": "string",
+    "Balance": "string",
+    "Entry": "string",
+    "AccountContract": "string",
+    "OpeningDate": "string",
+    "CurrencyExchange": "string",
+    "DefaultFundContribution": "string",
+    "SystemMember": "string",
+    "CollateralAccountType": "string",
+    "AccountService": "string",
+    "Reconciliation": "string",
+    "ManagedAccountProduct": "string"
+  },
+  "PositionLimits": {
+    "Type": "string",
+    "Amount": "string",
+    "CreditDebitIndicator": "string",
+    "UsedAmount": "string",
+    "UsedPercentage": "string",
+    "Currency": "string",
+    "LimitStatus": "string",
+    "Percentage": "string",
+    "RelatedDebitCreditFacility": "string",
+    "Periodicity": "string",
+    "Quantity": "string",
+    "ValidityPeriod": "string",
+    "RelatedPaymentCard": "string",
+    "AvailableAmount": "string"
+  },
+  "PositionLimitType": "Multilateral",
+  "PositionLimitSettings": {
+    "Type": "string",
+    "Amount": "string",
+    "CreditDebitIndicator": "string",
+    "UsedAmount": "string",
+    "UsedPercentage": "string",
+    "Currency": "string",
+    "LimitStatus": "string",
+    "Percentage": "string",
+    "RelatedDebitCreditFacility": "string",
+    "Periodicity": "string",
+    "Quantity": "string",
+    "ValidityPeriod": "string",
+    "RelatedPaymentCard": "string",
+    "AvailableAmount": "string"
+  },
+  "PositionLimitValue": {
+    "Value": "string"
+  },
+  "AccountDateType": "OpeningDate",
+  "AccountDate": "string",
+  "AccountBalance": {
+    "Type": "string",
+    "ValueDate": "string",
+    "CreditDebitIndicator": "string",
+    "AssetHolding": "string",
+    "CalculationDate": "string",
+    "Adjustment": "string",
+    "Account": "string",
+    "Interest": "string",
+    "BalanceEntry": "string",
+    "ProcessingRestriction": "string",
+    "OpeningClosingCode": "string"
+  },
+  "Accountbalance": {
+    "BalanceAmount": {
+      "AmountValue": {
+        "Value": "string"
+      },
+      "AmountCurrency": {
+        "Currencycode": "string"
+      },
+      "DecimalPointPosition": "string",
+      "AmountType": "Principal"
+    },
+    "BalanceType": "Openingbalance",
+    "BalanceDate": "string",
+    "BalanceIndicator": "Debit",
+    "Accountbalance": "string"
+  },
+  "CreditLine": [
+    {
+      "Included": true,
+      "Type": "Available",
+      "Amount": {
+        "AmountValue": {
+          "Value": "string"
+        },
+        "AmountCurrency": {
+          "Currencycode": "string"
+        },
+        "DecimalPointPosition": "string",
+        "AmountType": "Principal"
+      }
+    }
+  ],
+  "CorporateCurrentAccountProductMarketingStateID": {
+    "Identification": "string",
+    "IdentificationForContactPoint": "string",
+    "IdentificationForAccount": "string",
+    "RelatedPartyIdentification": "string",
+    "IssueDate": "string",
+    "ExpiryDate": "string",
+    "Scheme": "string",
+    "IdentificationForSecuritiesCertificate": "string",
+    "IdentificationForLot": "string",
+    "PartyRole": "string",
+    "IdentificationForCashProceedsIncome": "string",
+    "RelatedStatusReason": "string",
+    "IdentificationForBankTransaction": "string",
+    "IdentificationForAccountCostReferencePattern": "string",
+    "Account": "string",
+    "RelatedSystemIdentification": "string",
+    "IdentificationForInterestName": "string",
+    "RelatedCashAccountService": "string",
+    "IdentificationForInvestmentFundClass": "string",
+    "IdentifiedLocation": "string",
+    "RelatedSecuritiesIdentification": "string",
+    "IdentifiedDocument": "string",
+    "RelatedPurchaseOrder": "string",
+    "RelatedCertificate": "string"
+  },
+  "CorporateCurrentAccountSecondaryProductID": {
+    "Identification": "string",
+    "IdentificationForContactPoint": "string",
+    "IdentificationForAccount": "string",
+    "RelatedPartyIdentification": "string",
+    "IssueDate": "string",
+    "ExpiryDate": "string",
+    "Scheme": "string",
+    "IdentificationForSecuritiesCertificate": "string",
+    "IdentificationForLot": "string",
+    "PartyRole": "string",
+    "IdentificationForCashProceedsIncome": "string",
+    "RelatedStatusReason": "string",
+    "IdentificationForBankTransaction": "string",
+    "IdentificationForAccountCostReferencePattern": "string",
+    "Account": "string",
+    "RelatedSystemIdentification": "string",
+    "IdentificationForInterestName": "string",
+    "RelatedCashAccountService": "string",
+    "IdentificationForInvestmentFundClass": "string",
+    "IdentifiedLocation": "string",
+    "RelatedSecuritiesIdentification": "string",
+    "IdentifiedDocument": "string",
+    "RelatedPurchaseOrder": "string",
+    "RelatedCertificate": "string"
+  },
+  "CorporateCurrentAccountProductName": "string",
+  "CorporateCurrentAccountProductID": {
+    "Identification": "string",
+    "IdentificationForContactPoint": "string",
+    "IdentificationForAccount": "string",
+    "RelatedPartyIdentification": "string",
+    "IssueDate": "string",
+    "ExpiryDate": "string",
+    "Scheme": "string",
+    "IdentificationForSecuritiesCertificate": "string",
+    "IdentificationForLot": "string",
+    "PartyRole": "string",
+    "IdentificationForCashProceedsIncome": "string",
+    "RelatedStatusReason": "string",
+    "IdentificationForBankTransaction": "string",
+    "IdentificationForAccountCostReferencePattern": "string",
+    "Account": "string",
+    "RelatedSystemIdentification": "string",
+    "IdentificationForInterestName": "string",
+    "RelatedCashAccountService": "string",
+    "IdentificationForInvestmentFundClass": "string",
+    "IdentifiedLocation": "string",
+    "RelatedSecuritiesIdentification": "string",
+    "IdentifiedDocument": "string",
+    "RelatedPurchaseOrder": "string",
+    "RelatedCertificate": "string"
+  },
+  "CorporateCurrentAccountProductType": "BusinessCurrentAccount"
+}

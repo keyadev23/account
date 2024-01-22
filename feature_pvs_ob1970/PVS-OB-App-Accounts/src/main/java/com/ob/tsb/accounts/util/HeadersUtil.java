@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 public class HeadersUtil {
 
 
-    public static HttpHeaders defaultHeader(){
+    public static HttpHeaders defaultHeader() {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        return  httpHeaders;
+        return httpHeaders;
     }
 
-    public static HttpHeaders consentHeader(String token){
+    public static HttpHeaders consentHeader(String token) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         httpHeaders.setBearerAuth(token);

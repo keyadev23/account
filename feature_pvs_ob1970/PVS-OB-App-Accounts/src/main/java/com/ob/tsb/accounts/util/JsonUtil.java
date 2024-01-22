@@ -11,24 +11,23 @@ public class JsonUtil {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public static String toJson(Object object){
-        try{
+    public static String toJson(Object object) {
+        try {
             return objectMapper.writeValueAsString(object);
-        }catch (Throwable throwable){
-         log.info("Error in JsonUtil class in method toJson: {}",throwable.getMessage());
-         throw new CustomException("451","Something went wrong");
+        } catch (Throwable throwable) {
+            log.info("Error in JsonUtil class in method toJson: {}", throwable.getMessage());
+            throw new CustomException("451", "Something went wrong");
         }
     }
 
-    public static <T> T toObject(String json, Class<T> type){
-        try{
-            return objectMapper.readValue(json,type);
-        }catch (Throwable throwable){
-            log.info("Error in JsonUtil class in method toObject: {}",throwable.getMessage());
-         throw new CustomException("451","Something went wrong");
+    public static <T> T toObject(String json, Class<T> type) {
+        try {
+            return objectMapper.readValue(json, type);
+        } catch (Throwable throwable) {
+            log.info("Error in JsonUtil class in method toObject: {}", throwable.getMessage());
+            throw new CustomException("451", "Something went wrong");
         }
     }
-
 
 
 }

@@ -13,8 +13,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.web.reactive.server.WebTestClient;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 import java.io.File;
 
@@ -41,7 +39,7 @@ public class BaseControllerMockedTest {
 
     @SneakyThrows
     @BeforeEach
-    void setup(){
+    void setup() {
         accountsResponse = objectMapper.readValue(new File("src/main/resources/openapi/fakeResponse.json"), AccountsResponse.class);
     }
 

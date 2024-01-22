@@ -1,35 +1,22 @@
 package com.ob.tsb.accounts.controller;
 
 
-import com.ob.tsb.accounts.response.AccountsResponse;
 import com.ob.tsb.accounts.setup.BaseControllerMockedTest;
-import com.ob.tsb.accounts.util.JsonUtil;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
-import reactor.core.publisher.Mono;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 
 public class AccountsControllerTest extends BaseControllerMockedTest {
 
 
-
-
     @Test
     @DisplayName("Success - Get accounts API")
-    void accountsSuccessTest(){
+    void accountsSuccessTest() {
         String authorization = "";
         String xFapiAuthDate = "";
         String xFapiCustomerIpAddress = "";
@@ -58,8 +45,7 @@ public class AccountsControllerTest extends BaseControllerMockedTest {
         Assertions.assertEquals(Mono.just(expected), actual, "Accounts response objects should be equal");
         verify(mockController, times(1)).getAccounts();*/
 
-     //   when(accountService.getAccounts()).thenReturn(Mono.just((ResponseEntity.ok().body(accountsResponse))));
-
+        //   when(accountService.getAccounts()).thenReturn(Mono.just((ResponseEntity.ok().body(accountsResponse))));
 
 
     }

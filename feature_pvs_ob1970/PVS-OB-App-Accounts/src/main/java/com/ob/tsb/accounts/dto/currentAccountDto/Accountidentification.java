@@ -14,7 +14,7 @@ public class Accountidentification {
     @JsonProperty("AccountIdentificationType")
     public String accountIdentificationType;
     @JsonProperty("AccountIdentification")
-    public AccountIdentificationIn accountIdentification;
+    public AccountIdentificationIn accountIdentificationIn;
     @JsonProperty("Accountidentification")
     public String accountidentification;
 }

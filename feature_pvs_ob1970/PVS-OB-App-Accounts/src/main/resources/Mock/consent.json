@@ -1,0 +1,38 @@
+{
+  "Data": {
+    "ConsentId": "urn-alphabank-intent-88379",
+    "Status": "Authorised",
+    "StatusUpdateDateTime": "2017-05-02T00:05:00+00:00",
+    "CreationDateTime": "2017-05-02T00:00:00+00:00",
+    "Permissions": [
+      "ReadAccountsDetail",
+      "ReadBalances",
+      "ReadBeneficiariesDetail",
+      "ReadDirectDebits",
+      "ReadProducts",
+      "ReadStandingOrdersDetail",
+      "ReadTransactionsCredits",
+      "ReadTransactionsDebits",
+      "ReadTransactionsDetail",
+      "ReadOffers",
+      "ReadPAN",
+      "ReadParty",
+      "ReadPartyPSU",
+      "ReadScheduledPaymentsDetail",
+      "ReadStatementsDetail"
+    ],
+    "Accounts": [
+      "CurrentAccount"
+    ],
+    "ExpirationDateTime": "2017-08-02T00:00:00+00:00",
+    "TransactionFromDateTime": "2017-05-03T00:00:00+00:00",
+    "TransactionToDateTime": "2017-12-03T00:00:00+00:00"
+  },
+  "Risk": {},
+  "Links": {
+    "Self": "https://api.alphabank.com/open-banking/v3.1/aisp/account-access-consents/urn-alphabank-intent-88379"
+  },
+  "Meta": {
+    "TotalPages": 1
+  }
+}

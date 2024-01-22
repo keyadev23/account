@@ -136,57 +136,57 @@ components:
 
 
   schemas:
-     AccountsResponse:
-        type: object
-        properties:
-          Data:
-            type: object
-            properties:
-              Account:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    AccountId:
-                      type: string
-                    Status:
-                      type: string
-                    StatusUpdateDateTime:
-                      type: string
-                      format: date-time
-                    Currency:
-                      type: string
-                    AccountType:
-                      type: string
-                    AccountSubType:
-                      type: string
-                    Nickname:
-                      type: string
-                    OpeningDate:
-                      type: string
-                    Account:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          SchemeName:
-                            type: string
-                          Identification:
-                            type: string
-                          Name:
-                            type: string
-                          SecondaryIdentification:
-                            type: string
-          Links:
-            type: object
-            properties:
-              Self:
-                type: string
-          Meta:
-            type: object
-            properties:
-              TotalPages:
-                type: integer
-                format: int32
+    AccountsResponse:
+      type: object
+      properties:
+        Data:
+          type: object
+          properties:
+            Account:
+              type: array
+              items:
+                type: object
+                properties:
+                  AccountId:
+                    type: string
+                  Status:
+                    type: string
+                  StatusUpdateDateTime:
+                    type: string
+                    format: date-time
+                  Currency:
+                    type: string
+                  AccountType:
+                    type: string
+                  AccountSubType:
+                    type: string
+                  Nickname:
+                    type: string
+                  OpeningDate:
+                    type: string
+                  Account:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        SchemeName:
+                          type: string
+                        Identification:
+                          type: string
+                        Name:
+                          type: string
+                        SecondaryIdentification:
+                          type: string
+        Links:
+          type: object
+          properties:
+            Self:
+              type: string
+        Meta:
+          type: object
+          properties:
+            TotalPages:
+              type: integer
+              format: int32
 
 

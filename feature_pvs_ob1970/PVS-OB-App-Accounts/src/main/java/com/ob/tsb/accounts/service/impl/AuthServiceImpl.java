@@ -17,10 +17,10 @@ import static com.ob.tsb.accounts.util.ApplicationConstants.CIRCUIT_BREAKER_FALL
 public class AuthServiceImpl implements AuthService {
 
 
-     private final AuthClient authClient;
+    private final AuthClient authClient;
 
     public AuthServiceImpl(AuthClient authClient) {
-           this.authClient = authClient;
+        this.authClient = authClient;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class AuthServiceImpl implements AuthService {
     public ResponseEntity authServiceCbFallback(String token, RequestNotPermitted requestNotPermitted) {
         log.info("Auth Service Fallback method called.");
         log.info("RequestNotPermitted exception message: {}", requestNotPermitted.getMessage());
-                return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
                 .body(CIRCUIT_BREAKER_FALLBACK_MSG);
     }
 

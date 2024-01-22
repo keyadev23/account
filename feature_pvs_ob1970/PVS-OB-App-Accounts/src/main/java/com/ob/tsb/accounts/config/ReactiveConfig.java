@@ -15,10 +15,10 @@ import java.time.Duration;
 
 @Configuration
 
-public class ReactiveConfig  {
+public class ReactiveConfig {
 
     @Bean
-    public WebClient webClient(){
+    public WebClient webClient() {
         ConnectionProvider provider = ConnectionProvider.builder("fixed")
                 .maxConnections(550)
                 .maxIdleTime(Duration.ofSeconds(20))
@@ -31,7 +31,7 @@ public class ReactiveConfig  {
     }
 
     @Bean
-    public ObjectMapper objectMapper(){
+    public ObjectMapper objectMapper() {
         return JsonMapper.builder()
                 .addModule(new JavaTimeModule())
                 .build();

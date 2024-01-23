@@ -4,9 +4,7 @@ import com.ob.tsb.accounts.api.AccountsApi;
 import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.response.AccountsResponse;
 import com.ob.tsb.accounts.response.accountResponse.AccountResponse;
-import com.ob.tsb.accounts.service.AccountConsentService;
 import com.ob.tsb.accounts.service.AccountService;
-import com.ob.tsb.accounts.service.impl.AccountConsentServiceImpl;
 import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
@@ -30,12 +28,11 @@ public class AccountsController implements AccountsApi {
     // private final RateLimiterRegistry registry;
 
     private final AccountService accountService;
-    private final AccountConsentService accountConsentService;
 
-    public AccountsController(AccountService accountService, AccountConsentServiceImpl accountConsentServiceImpl, AccountConsentService accountConsentService) { //RateLimiterRegistry registry,
+    public AccountsController(AccountService accountService) { //RateLimiterRegistry registry,
         //  this.registry = registry;
         this.accountService = accountService;
-        this.accountConsentService = accountConsentService;
+
     }
 
 
@@ -55,7 +52,7 @@ public class AccountsController implements AccountsApi {
                                                           @RequestHeader("x-fapi-customer-ip-address") String xFapiCustomerIpAddress,
                                                           @RequestHeader("x-fapi-interaction-id") String xFapiInteractionId,
                                                           @RequestHeader("Accept") String accept, ServerWebExchange exchange) {
-        return accountConsentService.getAccounts(xFapiAuthDate, xFapiCustomerIpAddress, xFapiInteractionId, accept);
+        return accountService.getAccounts(xFapiAuthDate, xFapiCustomerIpAddress, xFapiInteractionId, accept);
     }
 
     @Override

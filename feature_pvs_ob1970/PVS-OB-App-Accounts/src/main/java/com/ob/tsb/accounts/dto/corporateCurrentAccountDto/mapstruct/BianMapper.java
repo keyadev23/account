@@ -1,5 +1,6 @@
-package com.ob.tsb.accounts.dto.currentAccountDto.mapstruct;
+package com.ob.tsb.accounts.dto.corporateCurrentAccountDto.mapstruct;
 
+import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.CorporateCurrentAccountResponse;
 import com.ob.tsb.accounts.dto.currentAccountDto.CurrentAccountResponse;
 import com.ob.tsb.accounts.response.AccountsResponseDataAccountInner;
 import com.ob.tsb.accounts.response.AccountsResponseDataAccountInnerAccountInner;
@@ -12,11 +13,11 @@ public interface BianMapper {
 
     BianMapper INSTANCE = Mappers.getMapper(BianMapper.class);
 
-    @Mapping(source = "currntAccountProductMarketingStateID.scheme", target = "schemeName")
-    @Mapping(source = "currentAccountProductID.identification", target = "identification")
-    @Mapping(source = "currentAccountProductID.relatedPartyIdentification", target = "name")
-    @Mapping(source = "currentAccountSecondaryProductID.identification", target = "secondaryIdentification")
-    public AccountsResponseDataAccountInnerAccountInner getAccountProduct(CurrentAccountResponse _resp);
+    @Mapping(source = "corporateCurrentAccountProductMarketingStateID.scheme", target = "schemeName")
+    @Mapping(source = "corporateCurrentAccountProductMarketingStateID.identification", target = "identification")
+    @Mapping(source = "corporateCurrentAccountProductMarketingStateID.relatedPartyIdentification", target = "name")
+    @Mapping(source = "corporateCurrentAccountSecondaryProductID.identification", target = "secondaryIdentification")
+    public AccountsResponseDataAccountInnerAccountInner getAccountProduct(CorporateCurrentAccountResponse _resp);
 
     @Mapping(source = "accountidentification.accountIdentificationIn.identifierValue.value", target = "accountId")
     @Mapping(source = "accountDetails.status", target = "status")
@@ -26,7 +27,7 @@ public interface BianMapper {
     @Mapping(source = "currentAccountType.accounttype", target = "accountSubType")
     @Mapping(source = "accountidentification.accountIdentificationIn.identifierIssuingAuthority.partyInvolvement.partyRoleName", target = "nickname")
     @Mapping(source = "accountDetails.openingDate", target = "openingDate")
-    public AccountsResponseDataAccountInner getAccount(CurrentAccountResponse _resp);
+    public AccountsResponseDataAccountInner getAccount(CorporateCurrentAccountResponse _resp);
 
 
 }

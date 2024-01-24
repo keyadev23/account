@@ -1,5 +1,6 @@
-package com.ob.tsb.accounts.dto.currentAccountDto.mapstruct;
+package com.ob.tsb.accounts.dto.corporateCurrentAccountDto.mapstruct;
 
+import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.CorporateCurrentAccountResponse;
 import com.ob.tsb.accounts.dto.currentAccountDto.CurrentAccountResponse;
 import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.response.AccountsResponseDataAccountInner;
@@ -10,10 +11,10 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BianDtoMapper {
-    private static final Logger logger = LogManager.getLogger(BianDtoMapper.class);
+public class BianCorporateMapper {
+    private static final Logger logger = LogManager.getLogger(BianCorporateMapper.class);
 
-    public static AccountsResponseDataAccountInner bianToOb(CurrentAccountResponse bianResp) {
+    public static AccountsResponseDataAccountInner bianToOb(CorporateCurrentAccountResponse bianResp) {
 
         AccountsResponseDataAccountInner account = new AccountsResponseDataAccountInner();
         try {
@@ -32,4 +33,5 @@ public class BianDtoMapper {
             throw new CustomException("451", "Failed to Map the object");
         }
     }
+
 }

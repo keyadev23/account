@@ -3,7 +3,6 @@ package com.ob.tsb.accounts.controller;
 import com.ob.tsb.accounts.api.AccountsApi;
 import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.response.AccountsResponse;
-import com.ob.tsb.accounts.response.accountResponse.AccountResponse;
 import com.ob.tsb.accounts.service.AccountService;
 import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
@@ -32,7 +31,6 @@ public class AccountsController implements AccountsApi {
     public AccountsController(AccountService accountService) { //RateLimiterRegistry registry,
         //  this.registry = registry;
         this.accountService = accountService;
-
     }
 
 
@@ -48,7 +46,7 @@ public class AccountsController implements AccountsApi {
     @Override
     @RateLimiter(name = "accountRateLimit", fallbackMethod = "rateLimitFallbackMethod")
     @Bulkhead(name = "accountBulkheadInstance", fallbackMethod = "bulkheadFallback")
-    public Mono<ResponseEntity<AccountResponse>> accounts(@RequestHeader("x-fapi-auth-date") String xFapiAuthDate,
+    public Mono<ResponseEntity<AccountsResponse>> accounts(@RequestHeader("x-fapi-auth-date") String xFapiAuthDate,
                                                           @RequestHeader("x-fapi-customer-ip-address") String xFapiCustomerIpAddress,
                                                           @RequestHeader("x-fapi-interaction-id") String xFapiInteractionId,
                                                           @RequestHeader("Accept") String accept, ServerWebExchange exchange) {

@@ -18,17 +18,17 @@ public class Data {
     @JsonProperty("Status")
     public String status;
     @JsonProperty("StatusUpdateDateTime")
-    public String statusUpdateDateTime;
+    public Date statusUpdateDateTime;
     @JsonProperty("CreationDateTime")
-    public String creationDateTime;
+    public Date creationDateTime;
     @JsonProperty("Permissions")
     public List<String> permissions;
     @JsonProperty("Accounts")
     public List<String> accounts;
     @JsonProperty("ExpirationDateTime")
-    public String expirationDateTime;
+    public Date expirationDateTime;
     @JsonProperty("TransactionFromDateTime")
-    public String transactionFromDateTime;
+    public Date transactionFromDateTime;
     @JsonProperty("TransactionToDateTime")
-    public String transactionToDateTime;
+    public Date transactionToDateTime;
 }

@@ -24,18 +24,15 @@ import java.nio.charset.StandardCharsets;
 @RequestMapping("/api/v1/mock")
 public class MockController {
     private final ObjectMapper objectMapper;
-    private final ResourceLoader resourceLoader;
     @Value("classpath:mock/currentAccount.json")
     Resource caResourceFile;
     @Value("classpath:mock/corporateCurrentAccount.json")
     Resource ccaResourceFile;
-
     @Value("classpath:mock/consent.json")
     Resource cResourceFile;
 
     public MockController(ObjectMapper objectMapper, ResourceLoader resourceLoader) {
         this.objectMapper = objectMapper;
-        this.resourceLoader = resourceLoader;
     }
 
     @GetMapping("/accounts")
@@ -49,7 +46,7 @@ public class MockController {
             return objectMapper.readValue(new String(bytes, StandardCharsets.UTF_8), AccountsResponse.class);
         } catch (Exception e) {
             log.error(" Error while reading accounts api mock response file");
-            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "Mock response not found");
+            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
     }
 
@@ -64,13 +61,13 @@ public class MockController {
             return objectMapper.readValue(new String(bytes, StandardCharsets.UTF_8), AccountsResponse.class);
         } catch (Exception e) {
             log.error(" Error while reading accounts by id api mock response file");
-            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "Mock response not found");
+            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
     }
 
     @GetMapping("/consent/{consentId}")
     public ConsentResponse getConsentDetails(@PathVariable("consentId") String mConsentId) {
-       try {
+        try {
             InputStream inputStream = cResourceFile.getInputStream();
             byte[] bytes = FileCopyUtils.copyToByteArray(inputStream);
             String jsonStr = new String(bytes);
@@ -78,7 +75,7 @@ public class MockController {
             return objectMapper.readValue(jsonStr, ConsentResponse.class);
         } catch (Exception e) {
             log.error(" Error while reading accounts by id api mock response file");
-            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "Mock response not found");
+            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
     }
 
@@ -92,7 +89,7 @@ public class MockController {
             return objectMapper.readValue(new String(bytes, StandardCharsets.UTF_8), CurrentAccountResponse.class);
         } catch (Exception e) {
             log.error(" Error while reading accounts by id api mock response file");
-            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "Mock response not found");
+            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
     }
 
@@ -106,7 +103,7 @@ public class MockController {
             return objectMapper.readValue(new String(bytes, StandardCharsets.UTF_8), CorporateCurrentAccountResponse.class);
         } catch (Exception e) {
             log.error(" Error while reading accounts by id api mock response file");
-            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "Mock response not found");
+            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
     }
 

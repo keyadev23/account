@@ -7,7 +7,6 @@ package com.ob.tsb.accounts.api;
 
 import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.response.AccountsResponse;
-import com.ob.tsb.accounts.response.accountResponse.AccountResponse;
 import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.swagger.v3.oas.annotations.Operation;
@@ -56,7 +55,7 @@ public interface AccountsApi {
             value = "/api/v1/accounts",
             produces = {"application/json"}
     )
-    default Mono<ResponseEntity<AccountResponse>> _accounts(
+    default Mono<ResponseEntity<AccountsResponse>> _accounts(
             @Parameter(name = "Authorization", description = "", in = ParameterIn.HEADER) @RequestHeader(value = "Authorization", required = false) String authorization,
             @Parameter(name = "x-fapi-auth-date", description = "", in = ParameterIn.HEADER) @RequestHeader(value = "x-fapi-auth-date", required = false) String xFapiAuthDate,
             @Parameter(name = "x-fapi-customer-ip-address", description = "", in = ParameterIn.HEADER) @RequestHeader(value = "x-fapi-customer-ip-address", required = false) String xFapiCustomerIpAddress,
@@ -124,7 +123,7 @@ public interface AccountsApi {
     @ExceptionHandler(CustomException.class)
     @RateLimiter(name = "accountRateLimit", fallbackMethod = "rateLimitFallbackMethod")
     @Bulkhead(name = "accountBulkheadInstance", fallbackMethod = "bulkheadFallback")
-    Mono<ResponseEntity<AccountResponse>> accounts(@RequestHeader("x-fapi-auth-date") String xFapiAuthDate,
+    Mono<ResponseEntity<AccountsResponse>> accounts(@RequestHeader("x-fapi-auth-date") String xFapiAuthDate,
                                                    @RequestHeader("x-fapi-customer-ip-address") String xFapiCustomerIpAddress,
                                                    @RequestHeader("x-fapi-interaction-id") String xFapiInteractionId,
                                                    @RequestHeader("Accept") String accept, ServerWebExchange exchange);

@@ -1,17 +1,14 @@
 package com.ob.tsb.accounts.service.impl;
 
 
-import com.ob.tsb.accounts.client.AccountClient;
 import com.ob.tsb.accounts.client.AccountsClient;
 import com.ob.tsb.accounts.dto.consentDto.ConsentResponse;
 import com.ob.tsb.accounts.enums.AccountType;
 import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.exception.ResourceNotFoundException;
 import com.ob.tsb.accounts.response.AccountsResponse;
-import com.ob.tsb.accounts.response.accountResponse.Account;
-import com.ob.tsb.accounts.response.accountResponse.AccountResponse;
+import com.ob.tsb.accounts.response.AccountsResponseDataAccountInner;
 import com.ob.tsb.accounts.service.AccountService;
-import com.ob.tsb.accounts.util.JsonUtil;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
 import org.apache.logging.log4j.LogManager;
@@ -28,22 +25,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static com.ob.tsb.accounts.exception.ErrorConstants.CONSENT_CLIENT_ERROR;
-import static com.ob.tsb.accounts.exception.ErrorConstants.CONSENT_SERVER_ERROR;
-import static com.ob.tsb.accounts.exception.ErrorDesc.handle4xxClientError;
-import static com.ob.tsb.accounts.exception.ErrorDesc.handle5xxClientError;
 import static com.ob.tsb.accounts.util.ApplicationConstants.CIRCUIT_BREAKER_FALLBACK_MSG;
 import static java.rmi.server.LogStream.log;
 
 @Service
-
 public class AccountServiceImpl implements AccountService {
+
     private static final Logger log = LogManager.getLogger(AccountServiceImpl.class);
     private final AuthServiceImpl authServiceImpl;
 
     private final WebClient webClient;
-
-    private final AccountClient accountClient;
 
     private final AccountsClient accountsClient;
 
@@ -61,10 +52,9 @@ public class AccountServiceImpl implements AccountService {
     private String accountsByIdUrl;
 
 
-    public AccountServiceImpl(AuthServiceImpl authServiceImpl, WebClient webClient, AccountClient accountClient, AccountsClient accountsClient) {
+    public AccountServiceImpl(AuthServiceImpl authServiceImpl, WebClient webClient, AccountsClient accountsClient) {
         this.authServiceImpl = authServiceImpl;
         this.webClient = webClient;
-        this.accountClient = accountClient;
         this.accountsClient = accountsClient;
 
     }
@@ -81,6 +71,7 @@ public class AccountServiceImpl implements AccountService {
     public Mono<ResponseEntity<AccountsResponse>> getAccountById(String accountId) {
         return accountsClient.processAccountApiRequest(accountsUrl + "/" + accountId, HttpMethod.GET, new HttpHeaders(), new LinkedMultiValueMap());
     }
+
 
     @Override
     @CircuitBreaker(name = "accountService", fallbackMethod = "accountServiceCbFallback")
@@ -107,12 +98,12 @@ public class AccountServiceImpl implements AccountService {
     public ConsentResponse getConsentDetails(String consentid) {
         log("--getConsentDetails---");
         AtomicReference<ConsentResponse> consentResponse = new AtomicReference<ConsentResponse>();
-        try{
+        try {
             UriComponentsBuilder componentsBuilder = UriComponentsBuilder
                     .fromHttpUrl(consentUrl)
                     .path(consentid);
             String url = componentsBuilder.toUriString();
-            Mono<ConsentResponse> consentMono=webClient
+            Mono<ConsentResponse> consentMono = webClient
                     .get()
                     .uri(componentsBuilder.toUriString())
                     .headers(headers -> headers.addAll(new HttpHeaders()))
@@ -132,26 +123,26 @@ public class AccountServiceImpl implements AccountService {
 
 
             return consentResponse.get();
-        }catch (Exception e) {
+        } catch (Exception e) {
             log.error(" Error while reading accounts by id api mock response file");
-            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "Mock response not found");
+            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
 
     }
 
     @Override
     @CircuitBreaker(name = "accountService", fallbackMethod = "accountServiceCbFallback")
-    public Mono<ResponseEntity<AccountResponse>> getAccounts(String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept) {
+    public Mono<ResponseEntity<AccountsResponse>> getAccounts(String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept) {
         log("In getAccounts");
         List<String> typeList = getAccountDetailsOfConsent(consentId);
-        AccountResponse accountResponse = new AccountResponse();
-        List<Account> accountList = new ArrayList<>();
+        AccountsResponse accountResponse = new AccountsResponse();
+        List<AccountsResponseDataAccountInner> accountList = new ArrayList<>();
 
         if (typeList.size() == 3) {
 
         } else {
             if (typeList.contains(AccountType.CurrentAccount.name())) {
-                Account account = accountClient.getCurrentAccountResponse(currentAccountUrl, new HttpHeaders());
+                AccountsResponseDataAccountInner account = accountsClient.getCurrentAccountResponse(currentAccountUrl, new HttpHeaders());
                 accountList.add(account);
             }
 
@@ -160,8 +151,8 @@ public class AccountServiceImpl implements AccountService {
             if (typeList.contains(AccountType.CreditCardAccount.name()))
                 getCreditCardAccount();*/
         }
-        accountResponse.getMData().setMAccount(accountList);
-        Mono<AccountResponse> monoResponse = Mono.just(accountResponse);
+        accountResponse.getData().setAccount(accountList);
+        Mono<AccountsResponse> monoResponse = Mono.just(accountResponse);
 
         return monoResponse.map(e -> ResponseEntity.ok(e));
 

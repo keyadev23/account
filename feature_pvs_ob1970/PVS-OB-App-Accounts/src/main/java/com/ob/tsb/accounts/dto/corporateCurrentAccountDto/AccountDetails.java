@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.OffsetDateTime;
 
@@ -42,6 +43,7 @@ public class AccountDetails {
     @JsonProperty("ClosingDate")
     public String closingDate;
     @JsonProperty("LiveDate")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     public OffsetDateTime liveDate;
     @JsonProperty("ReportedPeriod")
     public String reportedPeriod;

@@ -22,7 +22,6 @@ public interface BianMapperCorporate {
     @Mapping(source = "accountDetails.status", target = "status")
     @Mapping(source = "accountDetails.liveDate", target = "statusUpdateDateTime")
     @Mapping(source = "accountbalance.balanceAmount.amountCurrency.currencycode", target = "currency")
-    @Mapping(source = "corporateCurrentAccountType.accounttype", target = "accountSubType")
     @Mapping(source = "accountidentification.accountIdentification.identifierIssuingAuthority.partyInvolvement.partyRoleName", target = "nickname")
     @Mapping(source = "accountDetails.openingDate", target = "openingDate")
     public AccountsResponseDataAccountInner getAccount(CorporateCurrentAccountResponse _resp);

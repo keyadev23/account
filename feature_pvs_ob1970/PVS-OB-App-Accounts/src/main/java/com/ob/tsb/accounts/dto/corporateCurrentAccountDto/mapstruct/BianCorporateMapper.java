@@ -1,6 +1,7 @@
 package com.ob.tsb.accounts.dto.corporateCurrentAccountDto.mapstruct;
 
 import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.CorporateCurrentAccountResponse;
+import com.ob.tsb.accounts.enums.AccountSubType;
 import com.ob.tsb.accounts.enums.AccountType;
 import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.response.AccountsResponseDataAccountInner;
@@ -22,6 +23,7 @@ public class BianCorporateMapper {
             AccountsResponseDataAccountInnerAccountInner _mappedData = BianMapperCorporate.INSTANCE.getAccountProduct(bianResp);
             account = BianMapperCorporate.INSTANCE.getAccount(bianResp);
             account.setAccountType(AccountType.Business.name());
+            account.setAccountSubType(AccountSubType.CorporateCurrentAccount.name());
 
             List<AccountsResponseDataAccountInnerAccountInner> currentAccountProductList = new ArrayList<>();
             currentAccountProductList.add(_mappedData);

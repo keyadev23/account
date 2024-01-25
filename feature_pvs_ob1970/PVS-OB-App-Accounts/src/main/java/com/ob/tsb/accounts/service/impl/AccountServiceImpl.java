@@ -2,14 +2,14 @@ package com.ob.tsb.accounts.service.impl;
 
 
 import com.ob.tsb.accounts.client.AccountsClient;
+import com.ob.tsb.accounts.client.ConsentClient;
 import com.ob.tsb.accounts.dto.consentDto.ConsentResponse;
 import com.ob.tsb.accounts.enums.AccountSubType;
-import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.exception.ResourceNotFoundException;
 import com.ob.tsb.accounts.response.AccountsResponse;
+import com.ob.tsb.accounts.response.AccountsResponseData;
 import com.ob.tsb.accounts.response.AccountsResponseDataAccountInner;
 import com.ob.tsb.accounts.service.AccountService;
-import com.ob.tsb.accounts.util.JsonUtil;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
 import org.apache.logging.log4j.LogManager;
@@ -18,13 +18,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.util.retry.Retry;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
@@ -41,6 +39,8 @@ public class AccountServiceImpl implements AccountService {
     private final WebClient webClient;
 
     private final AccountsClient accountsClient;
+
+    private final ConsentClient consentClient;
 
     @Value("${consent.url}")
     private String consentUrl;
@@ -61,11 +61,11 @@ public class AccountServiceImpl implements AccountService {
     private AtomicReference<ConsentResponse> consentResponse = new AtomicReference<ConsentResponse>();
 
 
-    public AccountServiceImpl(AuthServiceImpl authServiceImpl, WebClient webClient, AccountsClient accountsClient) {
+    public AccountServiceImpl(AuthServiceImpl authServiceImpl, WebClient webClient, AccountsClient accountsClient, ConsentClient consentClient) {
         this.authServiceImpl = authServiceImpl;
         this.webClient = webClient;
         this.accountsClient = accountsClient;
-
+        this.consentClient = consentClient;
     }
 
 
@@ -81,96 +81,22 @@ public class AccountServiceImpl implements AccountService {
         return accountsClient.processAccountApiRequest(accountsUrl + "/" + accountId, HttpMethod.GET, new HttpHeaders(), new LinkedMultiValueMap());
     }
 
-
-    @Override
-    public List<String> getAccountDetailsOfConsent(String consentId) {
-        log.info("..getConsentDetails");
-        List<String> accountList = new ArrayList<>();
-        try {
-            String status = getConsentStatus(authServiceImpl.getAccessToken(), consentId);
-            if (status.equalsIgnoreCase("Authorized")) {
-                UriComponentsBuilder componentsBuilder = UriComponentsBuilder
-                        .fromHttpUrl(consentUrl)
-                        .path(consentId);
-                Mono<ConsentResponse> consentMono = webClient
-                        .get()
-                        .uri(componentsBuilder.toUriString())
-                        .retrieve()
-                        .onStatus(HttpStatusCode::isError,
-                                response -> response.bodyToMono(String.class).flatMap(errorBody -> {
-                                    log.error("Error accounts status code {}, response body: {}", response.statusCode(), errorBody);
-                                    CustomException customException = new CustomException("451", "Failed to fetch accounts");
-                                    return Mono.error(customException);
-                                }))
-                        .bodyToMono(ConsentResponse.class)
-                        .doOnNext((ConsentResponse consent) -> {
-                            consentResponse.set(consent);
-
-                        }).retryWhen(Retry.fixedDelay(2, Duration.ofMillis(1000)))
-                        .onErrorResume(error -> {
-                            log.error("Error while fetching accounts max attempt done: {}", error.getMessage());
-                            throw new CustomException("451", "Failed to fetch accounts");
-                        });
-
-
-                ConsentResponse consent=consentResponse.get();
-              //  accountList = consentResponse.getData().getAccounts();
-
-            } else {
-                log.info("Not Authorized for this consent id");
-            }
-        } catch (Exception ex) {
-
-        }
-        return accountList;
-    }
-
     private String getConsentStatus(String accessToken, String consentId) {
         //Hardik Method will be called
         return "Authorized";
     }
 
-
     @Override
-    public Mono<ConsentResponse> getConsentDetails(String consentId) {
-        try{
-            UriComponentsBuilder componentsBuilder = UriComponentsBuilder
-                    .fromHttpUrl(consentUrl)
-                    .path(consentId);
-            Mono<ConsentResponse> consentMono = webClient
-                    .get()
-                    .uri(componentsBuilder.toUriString())
-                    .retrieve()
-                    .onStatus(HttpStatusCode::isError,
-                            response -> response.bodyToMono(String.class).flatMap(errorBody -> {
-                                log.error("Error accounts status code {}, response body: {}", response.statusCode(), errorBody);
-                                CustomException customException = new CustomException("451", "Failed to fetch accounts");
-                                return Mono.error(customException);
-                            }))
-                    .bodyToMono(String.class)
-                    .map(response -> {
-                        log.debug("response = {}", response);
-                        ConsentResponse consent = JsonUtil.toObject(response, ConsentResponse.class);
-                        return consent;
-                    }).retry();
-
-            log.debug("AtomicReference value -- {}",consentResponse.get());
-            return consentMono;
-        } catch (Exception e) {
-            log.error(" Error while reading accounts by id api mock response file");
-            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
-        }
-    }
-
-    @Override
+    @CircuitBreaker(name = "accountService", fallbackMethod = "accountServiceCbFallback")
     public Mono<ResponseEntity<AccountsResponse>> getAccounts(String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept) {
         log.info("In getAccounts");
            String status = getConsentStatus(authServiceImpl.getAccessToken(), consentId);
         List<String> typeList = new ArrayList<>();
             if (status.equalsIgnoreCase("Authorized")) {
-                Mono<ConsentResponse> consent=getConsentDetails(consentId);
-             //   List<ConsentResponse> list = consent.toStream().toList();
-              //  typeList = consent.getData().getAccounts();
+                ConsentResponse consent = getConsents(consentId);
+
+                typeList.addAll(consent.getData().getAccounts());
+
             } else {
                 log.info("Not Authorized for this consent id");
             }
@@ -181,7 +107,7 @@ public class AccountServiceImpl implements AccountService {
 
                 } else {
                     if (typeList.contains(AccountSubType.CurrentAccount.name())) {
-                        AccountsResponseDataAccountInner account = accountsClient.getCurrentAccountResponse(currentAccountUrl, new HttpHeaders());
+                        AccountsResponseDataAccountInner account = accountsClient.getCurrentAccountResponse(currentAccountUrl);
                         accountList.add(account);
                     }
 
@@ -193,51 +119,29 @@ public class AccountServiceImpl implements AccountService {
            /* if (typeList.contains(AccountType.CreditCardAccount.name()))
                 getCreditCardAccount();*/
                 }
-                accountResponse.getData().setAccount(accountList);
-                Mono<AccountsResponse> monoResponse = Mono.just(accountResponse);
-
-
-
+            AccountsResponseData data = new AccountsResponseData();
+            data.setAccount(accountList);
+            accountResponse.setData(data);
+            Mono<AccountsResponse> monoResponse= Mono.just(accountResponse);
             return monoResponse.map(e -> ResponseEntity.ok(e));
     }
 
-    /*@Override
-    public Mono<ResponseEntity<ConsentResponse>> getConsents(String consentId) {
-        try {
+    @Override
+    @CircuitBreaker(name = "accountService", fallbackMethod = "accountServiceCbFallback")
+    public ConsentResponse getConsents(String consentId) {
+        try{
             UriComponentsBuilder componentsBuilder = UriComponentsBuilder
                     .fromHttpUrl(consentUrl)
                     .path(consentId);
-            AtomicReference<ConsentResponse> consentResponse = new AtomicReference<ConsentResponse>();
-            Mono<ConsentResponse> consentMono = webClient
-                    .get()
-                    .uri(componentsBuilder.toUriString())
-                    .retrieve()
-                    .onStatus(HttpStatusCode::isError,
-                            response -> response.bodyToMono(String.class).flatMap(errorBody -> {
-                                log.error("Error accounts status code {}, response body: {}", response.statusCode(), errorBody);
-                                CustomException customException = new CustomException("451", "Failed to fetch accounts");
-                                return Mono.error(customException);
-                            }))
-                    .bodyToMono(String.class)
-                    .map(response -> {
-                        log.debug("response = {}", response);
-                        ConsentResponse consent = JsonUtil.toObject(response, ConsentResponse.class);
-                        consentResponse.set(consent);
-                        return consent;
-                    }).retryWhen(Retry.fixedDelay(2, Duration.ofMillis(1000)))
-                    .onErrorResume(error -> {
-                        log.error("Error while fetching accounts max attempt done: {}", error.getMessage());
-                        throw new CustomException("451", "Failed to fetch accounts");
-                    });
+            RestTemplate restTemplate = new RestTemplate();
+            ConsentResponse consent = restTemplate.getForObject(componentsBuilder.toUriString(),ConsentResponse.class);
 
-            log.debug("AtomicReference value -- {}",consentResponse.get());
-            return consentMono.map(consent->ResponseEntity.ok(consent));
+            return consent;
         } catch (Exception e) {
             log.error(" Error while reading accounts by id api mock response file");
             throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
-    }*/
-
+    }
 
 
     public ResponseEntity accountServiceCbFallback(String token, RequestNotPermitted requestNotPermitted) {

@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -51,21 +52,13 @@ public class AccountsClient {
 
     }
 
-    public AccountsResponseDataAccountInner getCurrentAccountResponse(String url, HttpHeaders headers) {
+    public AccountsResponseDataAccountInner getCurrentAccountResponse(String url) {
         log.info("url : " + url);
         try {
-            AccountsResponseDataAccountInner accountResponse = webClient.get().uri(url)
-                    .headers(httpHeaders -> httpHeaders.addAll(headers))
-                    .retrieve()
-                    .onStatus(HttpStatusCode::is4xxClientError, clientResponse -> handle4xxClientError(AUTH_CLIENT_ERROR, clientResponse))
-                    .onStatus(HttpStatusCode::is5xxServerError, clientResponse -> handle5xxClientError(AUTH_SERVER_ERROR, clientResponse))
-                    .bodyToMono(CurrentAccountResponse.class)
-                    .map(response -> {
-                        log.info("Accounts Response: {}", response);
-
-                        return BianDtoMapper.bianToOb(response);
-                    }).block();
-            return accountResponse;
+            RestTemplate restTemplate = new RestTemplate();
+            CurrentAccountResponse response = restTemplate.getForObject(url, CurrentAccountResponse.class);
+            AccountsResponseDataAccountInner arResponse = BianDtoMapper.bianToOb(response);
+            return arResponse;
         } catch (Exception e) {
             throw new CustomException(HttpStatusCode.valueOf(500), "Something went wrong");
         }
@@ -75,18 +68,10 @@ public class AccountsClient {
     public AccountsResponseDataAccountInner getCorporateCurrentAccountResponse(String url, HttpHeaders headers) {
         log.info("url : " + url);
         try {
-            AccountsResponseDataAccountInner accountResponse = webClient.get().uri(url)
-                    .headers(httpHeaders -> httpHeaders.addAll(headers))
-                    .retrieve()
-                    .onStatus(HttpStatusCode::is4xxClientError, clientResponse -> handle4xxClientError(AUTH_CLIENT_ERROR, clientResponse))
-                    .onStatus(HttpStatusCode::is5xxServerError, clientResponse -> handle5xxClientError(AUTH_SERVER_ERROR, clientResponse))
-                    .bodyToMono(CorporateCurrentAccountResponse.class)
-                    .map(response -> {
-                        log.info("Accounts Response: {}", response);
-
-                        return BianCorporateMapper.bianToOb(response);
-                    }).block();
-            return accountResponse;
+            RestTemplate restTemplate = new RestTemplate();
+            CorporateCurrentAccountResponse response = restTemplate.getForObject(url, CorporateCurrentAccountResponse.class);
+            AccountsResponseDataAccountInner arResponse = BianCorporateMapper.bianToOb(response);
+            return arResponse;
         } catch (Exception e) {
             throw new CustomException(HttpStatusCode.valueOf(500), "Something went wrong");
         }

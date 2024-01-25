@@ -52,7 +52,7 @@ public interface AccountsApi {
     )
     @RequestMapping(
             method = RequestMethod.GET,
-            value = "/api/v1/getaccounts",
+            value = "/api/v1/accounts",
             produces = {"application/json"}
     )
     default Mono<ResponseEntity<AccountsResponse>> _accounts(

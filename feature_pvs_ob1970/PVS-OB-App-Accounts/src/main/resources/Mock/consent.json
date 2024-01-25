@@ -22,7 +22,8 @@
       "ReadStatementsDetail"
     ],
     "Accounts": [
-      "CurrentAccount"
+      "CurrentAccount",
+      "CorporateCurrentAccount"
     ],
     "ExpirationDateTime": "2017-08-02T00:00:00+00:00",
     "TransactionFromDateTime": "2017-05-03T00:00:00+00:00",

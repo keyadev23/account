@@ -85,12 +85,8 @@ public class MockController {
             throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
     }
-    /*@GetMapping("/getConsents/{consentId}")
-    public Mono<ResponseEntity<ConsentResponse>> getConsents(@PathVariable("consentId") String mConsentId) {
-        return accountService.getConsents(mConsentId);
-    }*/
 
-    @GetMapping("/CurrentAccountFacility/Retrieve")
+    @GetMapping("/currentAccountFacility/retrieve")
     public CurrentAccountResponse getBIANCurrentAccount() {
         try {
 
@@ -104,7 +100,7 @@ public class MockController {
         }
     }
 
-    @GetMapping("/CorporateCurrentAccountFacility/Retrieve")
+    @GetMapping("/corporateCurrentAccountFacility/retrieve")
     public CorporateCurrentAccountResponse getBIANCorporateCurrentAccount() {
         try {
 
@@ -117,7 +113,7 @@ public class MockController {
             throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
     }
-    @GetMapping("/CreditCardFacility/Retrieve")
+    @GetMapping("/creditCardFacility/retrieve")
     public CreditCardAccountResponse getBIANCreditCardAccount() {
         try {
 

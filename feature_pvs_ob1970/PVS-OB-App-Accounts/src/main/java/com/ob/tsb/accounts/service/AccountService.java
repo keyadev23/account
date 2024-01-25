@@ -13,12 +13,9 @@ public interface AccountService {
 
     Mono<ResponseEntity<AccountsResponse>> getAccountById(String accountId);
 
-    List<String> getAccountDetailsOfConsent(String consentId);
-
-    Mono <ConsentResponse> getConsentDetails(String consentId);
 
     Mono<ResponseEntity<AccountsResponse>> getAccounts(String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept);
 
-  //  Flux<ResponseEntity<ConsentResponse>> getConsents(String consentId);
+    ConsentResponse getConsents(String consentId);
 
 }

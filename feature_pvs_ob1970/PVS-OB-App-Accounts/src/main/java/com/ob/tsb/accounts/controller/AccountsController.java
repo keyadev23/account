@@ -7,11 +7,14 @@ import com.ob.tsb.accounts.service.AccountService;
 import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ServerWebExchange;
@@ -41,7 +44,6 @@ public class AccountsController implements AccountsApi {
         return Mono.just(ResponseEntity.status(HttpStatus.OK).body("Health is good"));
     }
 
-
     @ExceptionHandler(CustomException.class)
     @Override
     @RateLimiter(name = "accountRateLimit", fallbackMethod = "rateLimitFallbackMethod")
@@ -50,6 +52,7 @@ public class AccountsController implements AccountsApi {
                                                           @RequestHeader("x-fapi-customer-ip-address") String xFapiCustomerIpAddress,
                                                           @RequestHeader("x-fapi-interaction-id") String xFapiInteractionId,
                                                           @RequestHeader("Accept") String accept, ServerWebExchange exchange) {
+
         return accountService.getAccounts(xFapiAuthDate, xFapiCustomerIpAddress, xFapiInteractionId, accept);
     }
 
@@ -76,6 +79,7 @@ public class AccountsController implements AccountsApi {
         return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS)
                 .body(BULK_HEAD_FALLBACK_MSG);
     }
+
 
     /*@PostConstruct
     public void postConstruct() {

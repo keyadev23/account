@@ -52,7 +52,7 @@ public interface AccountsApi {
     )
     @RequestMapping(
             method = RequestMethod.GET,
-            value = "/api/v1/accounts",
+            value = "/api/v1/getaccounts",
             produces = {"application/json"}
     )
     default Mono<ResponseEntity<AccountsResponse>> _accounts(
@@ -127,7 +127,6 @@ public interface AccountsApi {
                                                    @RequestHeader("x-fapi-customer-ip-address") String xFapiCustomerIpAddress,
                                                    @RequestHeader("x-fapi-interaction-id") String xFapiInteractionId,
                                                    @RequestHeader("Accept") String accept, ServerWebExchange exchange);
-
     // Override this method
     default Mono<ResponseEntity<AccountsResponse>> accountsById(String accountId, String authorization, String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept, final ServerWebExchange exchange) {
         Mono<Void> result = Mono.empty();

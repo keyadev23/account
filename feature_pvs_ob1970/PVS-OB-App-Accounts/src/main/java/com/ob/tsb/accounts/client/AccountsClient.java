@@ -1,5 +1,8 @@
 package com.ob.tsb.accounts.client;
 
+import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.CorporateCurrentAccountResponse;
+import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.mapstruct.BianCorporateMapper;
+import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.mapstruct.BianMapperCorporate;
 import com.ob.tsb.accounts.dto.currentAccountDto.CurrentAccountResponse;
 import com.ob.tsb.accounts.dto.currentAccountDto.mapstruct.BianDtoMapper;
 import com.ob.tsb.accounts.exception.CustomException;
@@ -61,6 +64,27 @@ public class AccountsClient {
                         log.info("Accounts Response: {}", response);
 
                         return BianDtoMapper.bianToOb(response);
+                    }).block();
+            return accountResponse;
+        } catch (Exception e) {
+            throw new CustomException(HttpStatusCode.valueOf(500), "Something went wrong");
+        }
+
+
+    }
+    public AccountsResponseDataAccountInner getCorporateCurrentAccountResponse(String url, HttpHeaders headers) {
+        log.info("url : " + url);
+        try {
+            AccountsResponseDataAccountInner accountResponse = webClient.get().uri(url)
+                    .headers(httpHeaders -> httpHeaders.addAll(headers))
+                    .retrieve()
+                    .onStatus(HttpStatusCode::is4xxClientError, clientResponse -> handle4xxClientError(AUTH_CLIENT_ERROR, clientResponse))
+                    .onStatus(HttpStatusCode::is5xxServerError, clientResponse -> handle5xxClientError(AUTH_SERVER_ERROR, clientResponse))
+                    .bodyToMono(CorporateCurrentAccountResponse.class)
+                    .map(response -> {
+                        log.info("Accounts Response: {}", response);
+
+                        return BianCorporateMapper.bianToOb(response);
                     }).block();
             return accountResponse;
         } catch (Exception e) {

@@ -3,17 +3,21 @@ package com.ob.tsb.accounts.mock;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ob.tsb.accounts.dto.consentDto.ConsentResponse;
 import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.CorporateCurrentAccountResponse;
+import com.ob.tsb.accounts.dto.creditCardAccountDto.CreditCardAccountResponse;
 import com.ob.tsb.accounts.dto.currentAccountDto.CurrentAccountResponse;
 import com.ob.tsb.accounts.exception.ResourceNotFoundException;
 import com.ob.tsb.accounts.response.AccountsResponse;
+import com.ob.tsb.accounts.service.AccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Mono;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -24,6 +28,8 @@ import java.nio.charset.StandardCharsets;
 @RequestMapping("/api/v1/mock")
 public class MockController {
     private final ObjectMapper objectMapper;
+
+    private final AccountService accountService;
     @Value("classpath:mock/currentAccount.json")
     Resource caResourceFile;
     @Value("classpath:mock/corporateCurrentAccount.json")
@@ -31,8 +37,9 @@ public class MockController {
     @Value("classpath:mock/consent.json")
     Resource cResourceFile;
 
-    public MockController(ObjectMapper objectMapper, ResourceLoader resourceLoader) {
+    public MockController(ObjectMapper objectMapper, ResourceLoader resourceLoader, AccountService accountService) {
         this.objectMapper = objectMapper;
+        this.accountService = accountService;
     }
 
     @GetMapping("/accounts")
@@ -78,6 +85,10 @@ public class MockController {
             throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
     }
+    /*@GetMapping("/getConsents/{consentId}")
+    public Mono<ResponseEntity<ConsentResponse>> getConsents(@PathVariable("consentId") String mConsentId) {
+        return accountService.getConsents(mConsentId);
+    }*/
 
     @GetMapping("/CurrentAccountFacility/Retrieve")
     public CurrentAccountResponse getBIANCurrentAccount() {
@@ -106,6 +117,18 @@ public class MockController {
             throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
         }
     }
+    @GetMapping("/CreditCardFacility/Retrieve")
+    public CreditCardAccountResponse getBIANCreditCardAccount() {
+        try {
 
+            InputStream inputStream = caResourceFile.getInputStream();
+            byte[] bytes = FileCopyUtils.copyToByteArray(inputStream);
+
+            return objectMapper.readValue(new String(bytes, StandardCharsets.UTF_8), CreditCardAccountResponse.class);
+        } catch (Exception e) {
+            log.error(" Error while reading accounts by id api mock response file");
+            throw new ResourceNotFoundException(HttpStatus.NO_CONTENT, "mock response not found");
+        }
+    }
 
 }

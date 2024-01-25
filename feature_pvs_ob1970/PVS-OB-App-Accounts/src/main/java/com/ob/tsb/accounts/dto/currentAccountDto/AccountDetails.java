@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.OffsetDateTime;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -40,7 +42,7 @@ public class AccountDetails {
     @JsonProperty("ClosingDate")
     public String closingDate;
     @JsonProperty("LiveDate")
-    public String liveDate;
+    public OffsetDateTime liveDate;
     @JsonProperty("ReportedPeriod")
     public String reportedPeriod;
     @JsonProperty("InvestmentFundPartyRole")

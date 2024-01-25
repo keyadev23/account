@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN" monitorInterval="30">
     <Properties>
-        <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
+        <Property name="LOG_PATTERN">%d [%t] %-5level %logger{36} - %msg%n%throwable</Property>
         <Property name="APP_LOG_ROOT">logs</Property>
     </Properties>
 
@@ -10,8 +10,8 @@
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
         <RollingFile name="appLog"
-                     fileName="${APP_LOG_ROOT}/transactionApp/application.log"
-                     filePattern="${APP_LOG_ROOT}/transactionApp/application-%d{yyyy-MM-dd}-%i.log">
+                     fileName="${APP_LOG_ROOT}/accountsApp/application.log"
+                     filePattern="${APP_LOG_ROOT}/accountsApp/application-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="19500KB"/>
@@ -21,11 +21,11 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="com.tsb.transaction" additivity="false">
+        <Logger name="com.tsb.transaction" level="ALL">
             <AppenderRef ref="appLog"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Root level="all">
+        <Root level="ALL">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="appLog"/>
         </Root>

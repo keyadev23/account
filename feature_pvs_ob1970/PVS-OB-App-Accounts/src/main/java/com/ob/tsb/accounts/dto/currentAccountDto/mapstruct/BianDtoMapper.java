@@ -1,6 +1,7 @@
 package com.ob.tsb.accounts.dto.currentAccountDto.mapstruct;
 
 import com.ob.tsb.accounts.dto.currentAccountDto.CurrentAccountResponse;
+import com.ob.tsb.accounts.enums.AccountType;
 import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.response.AccountsResponseDataAccountInner;
 import com.ob.tsb.accounts.response.AccountsResponseDataAccountInnerAccountInner;
@@ -20,6 +21,7 @@ public class BianDtoMapper {
 
             AccountsResponseDataAccountInnerAccountInner _mappedData = BianMapper.INSTANCE.getAccountProduct(bianResp);
             account = BianMapper.INSTANCE.getAccount(bianResp);
+            account.setAccountType(AccountType.Personal.name());
 
             List<AccountsResponseDataAccountInnerAccountInner> currentAccountProductList = new ArrayList<>();
             currentAccountProductList.add(_mappedData);

@@ -1,0 +1,192 @@
+openapi: 3.0.0
+
+info:
+  title: Accounts Microservice
+  version: 0.0.1
+
+paths:
+  /api/v1/health-check:
+    get:
+      summary: Account MS Health Check
+      operationId: health-check
+      tags:
+        - accounts
+      responses:
+        '200':
+          description: Checking Accounts MS Health
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+          content: { }
+
+
+  /api/v1/accounts:
+    get:
+      parameters:
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: x-fapi-auth-date
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: x-fapi-customer-ip-address
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: x-fapi-interaction-id
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            enum:
+              - application/json
+      summary: Get full list of accounts for AISP
+      operationId: accounts
+      tags:
+        - accounts
+      responses:
+        '200':
+          description: Accounts information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountsResponse'
+
+  /api/v1/accounts/{accountId}:
+    get:
+      parameters:
+        - name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: x-fapi-auth-date
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: x-fapi-customer-ip-address
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: x-fapi-interaction-id
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            enum:
+              - application/json
+        - name: accountId
+          in: path
+          description: Id of the account to get
+          required: true
+          schema:
+            type: string
+      summary: Get Account details by account Id
+      operationId: accountsById
+      tags:
+        - accounts
+      responses:
+        '200':
+          description: Account information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountsResponse'
+
+
+components:
+
+  headers:
+    Authorization:
+      required: true
+      schema:
+        type: string
+    x-fapi-auth-date:
+      required: true
+      schema:
+        type: string
+    x-fapi-customer-ip-address:
+      required: true
+      schema:
+        type: string
+    Accept:
+      required: true
+      schema:
+        type: string
+
+
+  schemas:
+    AccountsResponse:
+      type: object
+      properties:
+        Data:
+          type: object
+          properties:
+            Account:
+              type: array
+              items:
+                type: object
+                properties:
+                  AccountId:
+                    type: string
+                  Status:
+                    type: string
+                  StatusUpdateDateTime:
+                    type: string
+                    format: date-time
+                  Currency:
+                    type: string
+                  AccountType:
+                    type: string
+                  AccountSubType:
+                    type: string
+                  Nickname:
+                    type: string
+                  OpeningDate:
+                    type: string
+                  Account:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        SchemeName:
+                          type: string
+                        Identification:
+                          type: string
+                        Name:
+                          type: string
+                        SecondaryIdentification:
+                          type: string
+        Links:
+          type: object
+          properties:
+            Self:
+              type: string
+        Meta:
+          type: object
+          properties:
+            TotalPages:
+              type: integer
+              format: int32
+
+

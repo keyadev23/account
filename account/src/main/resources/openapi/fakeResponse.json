@@ -1,0 +1,46 @@
+{
+  "Data": {
+    "Account": [
+      {
+        "AccountId": "22289",
+        "Status": "Enabled",
+        "StatusUpdateDateTime": "2019-01-01T06:06:06+00:00",
+        "Currency": "GBP",
+        "AccountType": "Personal",
+        "AccountSubType": "CurrentAccount",
+        "Nickname": "Bills",
+        "OpeningDate": "01-05-2002",
+        "Account": [
+          {
+            "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+            "Identification": "80200110203345",
+            "Name": "Mr Kevin",
+            "SecondaryIdentification": "00021"
+          }
+        ]
+      },
+      {
+        "AccountId": "31820",
+        "Status": "Enabled",
+        "StatusUpdateDateTime": "2018-01-01T06:06:06+00:00",
+        "Currency": "GBP",
+        "AccountType": "Personal",
+        "AccountSubType": "CurrentAccount",
+        "Nickname": "Household",
+        "Account": [
+          {
+            "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+            "Identification": "80200110203348",
+            "Name": "Mr Kevin"
+          }
+        ]
+      }
+    ]
+  },
+  "Links": {
+    "Self": "https://api.alphabank.com/open-banking/v3.1/aisp/accounts/"
+  },
+  "Meta": {
+    "TotalPages": 1
+  }
+}

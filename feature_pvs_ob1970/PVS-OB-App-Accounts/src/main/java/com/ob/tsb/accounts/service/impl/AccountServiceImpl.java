@@ -53,6 +53,10 @@ public class AccountServiceImpl implements AccountService {
 
     @Value("${corporateCurrentAccount.url}")
     private String corporateCurrentAccountUrl;
+
+    @Value("${creditCardAccount.url}")
+    private String creditCardAccountUrl;
+
     @Value("${accounts.url}")
     private String accountsUrl;//mock later is TSB
     @Value("${accountsById.url}")
@@ -103,22 +107,22 @@ public class AccountServiceImpl implements AccountService {
                 AccountsResponse accountResponse = new AccountsResponse();
                 List<AccountsResponseDataAccountInner> accountList = new ArrayList<>();
 
-                if (typeList.size() == 3) {
-
-                } else {
-                    if (typeList.contains(AccountSubType.CurrentAccount.name())) {
-                        AccountsResponseDataAccountInner account = accountsClient.getCurrentAccountResponse(currentAccountUrl);
-                        accountList.add(account);
-                    }
-
-                    if (typeList.contains(AccountSubType.CorporateCurrentAccount.name())){
-                        AccountsResponseDataAccountInner account = accountsClient.getCorporateCurrentAccountResponse(corporateCurrentAccountUrl, new HttpHeaders());
-                        accountList.add(account);
-                    }
-
-           /* if (typeList.contains(AccountType.CreditCardAccount.name()))
-                getCreditCardAccount();*/
+                if (typeList.contains(AccountSubType.CurrentAccount.name())) {
+                    AccountsResponseDataAccountInner account = accountsClient.getCurrentAccountResponse(currentAccountUrl);
+                    accountList.add(account);
                 }
+
+                if (typeList.contains(AccountSubType.CorporateCurrentAccount.name())){
+                   AccountsResponseDataAccountInner account = accountsClient.getCorporateCurrentAccountResponse(corporateCurrentAccountUrl, new HttpHeaders());
+                   accountList.add(account);
+                }
+
+                if (typeList.contains(AccountSubType.CreditCardAccount.name())){
+                    AccountsResponseDataAccountInner account = accountsClient.getCreditCardAccountResponse(creditCardAccountUrl, new HttpHeaders());
+                    accountList.add(account);
+                }
+
+
             AccountsResponseData data = new AccountsResponseData();
             data.setAccount(accountList);
             accountResponse.setData(data);

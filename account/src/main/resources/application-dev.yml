@@ -17,6 +17,8 @@ currentAccount:
   url: http://127.0.0.1:8080/accounts/api/v1/mock/currentAccountFacility/retrieve
 corporateCurrentAccount:
   url: http://127.0.0.1:8080/accounts/api/v1/mock/corporateCurrentAccountFacility/retrieve
+creditCardAccount:
+  url: http://127.0.0.1:8080/accounts/api/v1/mock/creditCardFacility/retrieve
 
 
 #actuator

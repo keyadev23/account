@@ -34,6 +34,9 @@ public class MockController {
     Resource caResourceFile;
     @Value("classpath:mock/corporateCurrentAccount.json")
     Resource ccaResourceFile;
+
+    @Value("classpath:mock/creditCardAccount.json")
+    Resource ccResourceFile;
     @Value("classpath:mock/consent.json")
     Resource cResourceFile;
 
@@ -117,7 +120,7 @@ public class MockController {
     public CreditCardAccountResponse getBIANCreditCardAccount() {
         try {
 
-            InputStream inputStream = caResourceFile.getInputStream();
+            InputStream inputStream = ccResourceFile.getInputStream();
             byte[] bytes = FileCopyUtils.copyToByteArray(inputStream);
 
             return objectMapper.readValue(new String(bytes, StandardCharsets.UTF_8), CreditCardAccountResponse.class);

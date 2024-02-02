@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatusCode;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class CustomException extends RuntimeException {
 

@@ -2,7 +2,6 @@ package com.ob.tsb.accounts.client;
 
 import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.CorporateCurrentAccountResponse;
 import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.mapstruct.BianCorporateMapper;
-import com.ob.tsb.accounts.dto.corporateCurrentAccountDto.mapstruct.BianMapperCorporate;
 import com.ob.tsb.accounts.dto.creditCardAccountDto.CreditCardAccountResponse;
 import com.ob.tsb.accounts.dto.creditCardAccountDto.mapstruct.BianCreditCardMapper;
 import com.ob.tsb.accounts.dto.currentAccountDto.CurrentAccountResponse;
@@ -67,6 +66,7 @@ public class AccountsClient {
 
 
     }
+
     public AccountsResponseDataAccountInner getCorporateCurrentAccountResponse(String url, HttpHeaders headers) {
         log.info("url : " + url);
         try {
@@ -74,12 +74,14 @@ public class AccountsClient {
             CorporateCurrentAccountResponse response = restTemplate.getForObject(url, CorporateCurrentAccountResponse.class);
             AccountsResponseDataAccountInner arResponse = BianCorporateMapper.bianToOb(response);
             return arResponse;
+
         } catch (Exception e) {
             throw new CustomException(HttpStatusCode.valueOf(500), "Something went wrong");
         }
 
 
     }
+
     public AccountsResponseDataAccountInner getCreditCardAccountResponse(String url, HttpHeaders headers) {
         log.info("url : " + url);
         try {

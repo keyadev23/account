@@ -5,10 +5,7 @@
  */
 package com.ob.tsb.accounts.api;
 
-import com.ob.tsb.accounts.exception.CustomException;
 import com.ob.tsb.accounts.response.AccountsResponse;
-import io.github.resilience4j.bulkhead.annotation.Bulkhead;
-import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -21,11 +18,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-12T13:36:21.354557600+05:30[Asia/Calcutta]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-29T19:38:19.318642800+05:30[Asia/Calcutta]")
 @Validated
 @Tag(name = "accounts", description = "the accounts API")
 public interface AccountsApi {
@@ -63,11 +63,11 @@ public interface AccountsApi {
             @Parameter(name = "Accept", description = "", in = ParameterIn.HEADER) @RequestHeader(value = "Accept", required = false) String accept,
             @Parameter(hidden = true) final ServerWebExchange exchange
     ) {
-        return accounts(xFapiAuthDate, xFapiCustomerIpAddress, xFapiInteractionId, accept, exchange);
+        return accounts(authorization, xFapiAuthDate, xFapiCustomerIpAddress, xFapiInteractionId, accept, exchange);
     }
 
     // Override this method
-   /* default Mono<ResponseEntity<AccountsResponse>> accounts(String authorization, String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept, final ServerWebExchange exchange) {
+    default Mono<ResponseEntity<AccountsResponse>> accounts(String authorization, String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept, final ServerWebExchange exchange) {
         Mono<Void> result = Mono.empty();
         exchange.getResponse().setStatusCode(HttpStatus.NOT_IMPLEMENTED);
         for (MediaType mediaType : exchange.getRequest().getHeaders().getAccept()) {
@@ -79,7 +79,7 @@ public interface AccountsApi {
         }
         return result.then(Mono.empty());
 
-    }*/
+    }
 
 
     /**
@@ -120,13 +120,6 @@ public interface AccountsApi {
         return accountsById(accountId, authorization, xFapiAuthDate, xFapiCustomerIpAddress, xFapiInteractionId, accept, exchange);
     }
 
-    @ExceptionHandler(CustomException.class)
-    @RateLimiter(name = "accountRateLimit", fallbackMethod = "rateLimitFallbackMethod")
-    @Bulkhead(name = "accountBulkheadInstance", fallbackMethod = "bulkheadFallback")
-    Mono<ResponseEntity<AccountsResponse>> accounts(@RequestHeader("x-fapi-auth-date") String xFapiAuthDate,
-                                                   @RequestHeader("x-fapi-customer-ip-address") String xFapiCustomerIpAddress,
-                                                   @RequestHeader("x-fapi-interaction-id") String xFapiInteractionId,
-                                                   @RequestHeader("Accept") String accept, ServerWebExchange exchange);
     // Override this method
     default Mono<ResponseEntity<AccountsResponse>> accountsById(String accountId, String authorization, String xFapiAuthDate, String xFapiCustomerIpAddress, String xFapiInteractionId, String accept, final ServerWebExchange exchange) {
         Mono<Void> result = Mono.empty();

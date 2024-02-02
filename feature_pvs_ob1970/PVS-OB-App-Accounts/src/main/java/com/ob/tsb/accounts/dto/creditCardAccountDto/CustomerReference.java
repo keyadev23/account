@@ -7,12 +7,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerReference {
     @JsonProperty("PartyReference")
     public PartyReference partyReference;
-    @JsonProperty("PartyInvolvement")
-    public PartyInvolvement partyInvolvement;
 }

@@ -19,12 +19,11 @@ public class BianCreditCardMapper {
 
         AccountsResponseDataAccountInner account = new AccountsResponseDataAccountInner();
         try {
-
-
-            AccountsResponseDataAccountInnerAccountInner _mappedData = BianMapperCreditCard.INSTANCE.getAccountProduct(bianResp);
+           // AccountsResponseDataAccountInnerAccountInner _mappedData = BianMapperCreditCard.INSTANCE.getAccountProduct(bianResp);
+            AccountsResponseDataAccountInnerAccountInner _mappedData= new AccountsResponseDataAccountInnerAccountInner();
             account = BianMapperCreditCard.INSTANCE.getAccount(bianResp);
             account.setAccountType(AccountType.Personal.name());
-            account.setAccountSubType(AccountSubType.CreditCardAccount.name());
+
 
             List<AccountsResponseDataAccountInnerAccountInner> creditCardAccountList = new ArrayList<>();
             creditCardAccountList.add(_mappedData);

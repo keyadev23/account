@@ -7,18 +7,19 @@ spring:
 auth:
   url: https://ob-api.ob-cluster.mywv.p1.openshiftapps.com/accounts/api/v1/mock/auth/
 consent:
-  url: http://127.0.0.1:8080/accounts/api/v1/mock/consent/
+  url: http://localhost:8080/accounts/api/v1/mock/consent/
   id: urn-alphabank-intent-88379
 accounts:
   url: https://ob-api.ob-cluster.mywv.p1.openshiftapps.com/accounts/api/v1/mock/accounts
 accountsById:
   url: https://ob-api.ob-cluster.mywv.p1.openshiftapps.com/accounts/api/v1/mock/accounts/{accountId}
 currentAccount:
-  url: http://127.0.0.1:8080/accounts/api/v1/mock/currentAccountFacility/retrieve
+  url: http://ob-api.ob-cluster.mywv.p1.openshiftapps.com/accounts/api/v1/mock/currentAccountFacility/retrieve
 corporateCurrentAccount:
-  url: http://127.0.0.1:8080/accounts/api/v1/mock/corporateCurrentAccountFacility/retrieve
+  url: http://ob-api.ob-cluster.mywv.p1.openshiftapps.com/accounts/api/v1/mock/corporateCurrentAccountFacility/retrieve
 creditCardAccount:
-  url: http://127.0.0.1:8080/accounts/api/v1/mock/creditCardFacility/retrieve
+  url: http://localhost:8080/accounts/api/v1/mock/creditCardFacility/retrieve
+
 
 
 #actuator

@@ -1,0 +1,53 @@
+{
+    "Accountidentification": {
+        "AccountIdentificationType": "BBAN",
+        "Accountidentification": "string"
+    },
+    "Accountbalance": {
+        "BalanceAmount": {
+          "AmountValue": {
+            "Value": "185933295.35"
+          },
+          "AmountCurrency": "USD"
+        },
+        "BalanceType": "Openingbalance",
+        "BalanceDate": "2024-01-16T15:43:14+00:00",
+        "BalanceIndicator": "Debit"
+    },
+    "AccountCurrency": "USD",
+    "AccountDetails": {
+        "Status": {
+          "AccountStatus": {
+            "StatusDateTime": "2024-01-16T13:49:14+00:00"
+          },
+          "AccountStatusType": "Enabled"
+        },
+        "ClosingDate": "2032-01-16T13:49:14+00:00",
+        "OpeningDate": "2022-01-16T13:49:14+00:00"
+    },
+    "AssociationReference": {
+        "Identification": "77150158688068",
+        "AccountIdentificationType": "BBAN"
+    },
+    "CurrentAccountProductType": "PersonalCurrentAccount",
+    "CurrentAccountType": {
+        "AccountType": "CurrentAccount",
+        "AccountTypeName": "Spend & Save Account"
+    },
+    "CurrentAccountNumber": {
+        "Name": "MR JOHN A SMITH",
+        "Number": "identificationnumber"
+    },
+    "CreditLine": [
+        {
+          "Included": true,
+          "Type": "Available",
+          "Amount": {
+            "AmountValue": {
+              "Value": "185933295.35"
+            },
+            "AmountCurrency": "USD"
+          }
+        }
+    ]
+}

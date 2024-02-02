@@ -29,13 +29,6 @@ public class AuthServiceImpl implements AuthService {
         return authClient.validatePrivileage(token);
     }
 
-    @Override
-    @CircuitBreaker(name = "authService", fallbackMethod = "authServiceCbFallback")
-    public String getAccessToken() {
-
-        return null;
-    }
-
     public ResponseEntity authServiceCbFallback(String token, RequestNotPermitted requestNotPermitted) {
         log.info("Auth Service Fallback method called.");
         log.info("RequestNotPermitted exception message: {}", requestNotPermitted.getMessage());

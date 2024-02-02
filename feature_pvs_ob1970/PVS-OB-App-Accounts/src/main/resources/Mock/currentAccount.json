@@ -16,7 +16,7 @@
     "AccountIdentificationType": "BBAN",
     "AccountIdentification": {
       "IdentifierValue": {
-        "Value": "string"
+        "Value": "31820"
       },
       "IdentifierIssuingAuthority": {
         "PartyReference": {

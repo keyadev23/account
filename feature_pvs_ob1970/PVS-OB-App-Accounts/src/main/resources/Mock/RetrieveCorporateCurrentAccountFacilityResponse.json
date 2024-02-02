@@ -1,0 +1,53 @@
+{
+  "Accountbalance": {
+    "BalanceAmount": {
+      "AmountValue": {
+        "Value": "123.45"
+      },
+      "AmountCurrency": "GBP"
+    },
+    "BalanceType": "Openingbalance",
+    "BalanceDate": "2024-01-15T13:40:25+00:00",
+    "BalanceIndicator": "Debit"
+  },
+  "AccountCurrency": "GBP",
+  "AccountDetails": {
+    "Status": {
+      "AccountStatus": {
+        "StatusDateTime": "2024-01-16T16:29:14+00:00"
+      },
+      "AccountStatusType": "Enabled"
+    },
+    "ClosingDate": "2030-10-12T16:29:14+00:00",
+    "OpeningDate": "2020-10-12T16:29:14+00:00"
+  },
+  "Accountidentification": {
+    "AccountIdentificationType": "IBAN",
+    "Accountidentification": "secondary identification"
+  },
+  "AssociationReference": {
+    "Identification": "77150158688068",
+    "AccountIdentificationType": "IBAN"
+  },
+  "CorporateCurrentAccountProductType": "BusinessCurrentAccount",
+  "CorporateCurrentAccountNumber": {
+    "Name": "MR MICHEAL COLLINS",
+    "Number": "5564567890564358"
+  },
+  "CorporateCurrentAccountType": {
+    "AccountType": "CurrentAccount",
+    "AccountTypeName": "Corporate Spending Account"
+  },
+  "CreditLine": [
+    {
+      "Included": true,
+      "Type": "Available",
+      "Amount": {
+        "AmountValue": {
+          "Value": "5000.00"
+        },
+        "AmountCurrency": "GBP"
+      }
+    }
+  ]
+}

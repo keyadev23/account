@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 
 @JsonTypeName("AccountsResponse_Data_Account_inner_Account_inner")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-12T13:36:21.354557600+05:30[Asia/Calcutta]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-29T19:38:19.318642800+05:30[Asia/Calcutta]")
 public class AccountsResponseDataAccountInnerAccountInner {
 
     private String schemeName;

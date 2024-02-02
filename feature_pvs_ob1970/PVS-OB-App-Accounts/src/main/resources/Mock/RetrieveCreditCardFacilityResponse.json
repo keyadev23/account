@@ -1,0 +1,58 @@
+{
+  "Accountidentification": {
+    "AccountIdentificationType": "BBAN",
+    "Accountidentification": "secondary identification"
+  },
+  "CustomerReference": {
+    "PartyReference": {
+      "PartyName": {
+        "Name": "John Smith"
+      }
+    }
+  },
+  "AccountCurrency": "GBP",
+  "AssociationReference": {
+    "Identification": "77150158688068",
+    "AccountIdentificationType": "BBAN"
+  },
+  "AccountDetails": {
+    "Identification": {
+      "Name": "MR JOHN A SMITH",
+      "Number": "1234567890123456"
+    },
+    "AccountType": "CreditAccount",
+    "AccountTypeName": "Credit Account",
+    "Status": {
+      "AccountStatus": {
+        "StatusDateTime": "2024-01-15T10:29:14+00:00"
+      },
+      "AccountStatusType": "Enabled"
+    },
+    "ClosingDate": "2032-05-23T10:29:14+00:00",
+    "OpeningDate": "2022-05-22T10:29:14+00:00"
+  },
+  "Accountbalance": {
+    "BalanceAmount": {
+      "AmountValue": {
+        "Value": "123.45"
+      },
+      "AmountCurrency": "GBP"
+    },
+    "BalanceType": "Openingbalance",
+    "BalanceDate": "2022-05-22T10:29:14+00:00",
+    "BalanceIndicator": "Debit"
+  },
+  "CreditLine": [
+    {
+      "Included": true,
+      "Type": "Available",
+      "Amount": {
+        "AmountValue": {
+          "Value": "5000.00"
+        },
+        "AmountCurrency": "GBP"
+      }
+    }
+  ],
+  "CreditCardProductType": "Commercialcreditcard"
+}
